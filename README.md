@@ -1,5 +1,11 @@
 # 🪔 দুর্গা পূজার গান — Old Puja Songs Archive
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
+
 > **একটি নস্টালজিক দুর্গাপূজার গান আর্কাইভ** — রেডিওর সুর, গ্রামোফোনের নস্টালজিয়া, মহিষাসুরমর্দিনী আর আধুনিক পূজার অমলিন সুরের আড্ডা।
 
 ![Durga Puja Nostalgia Banner](assets/puja_theme_evening.jpg)
