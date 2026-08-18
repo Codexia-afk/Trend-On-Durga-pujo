@@ -431,6 +431,7 @@
     dhakBtnText: document.getElementById('dhak-btn-text'),
     festiveMagicBtn: document.getElementById('festive-magic-btn'),
     magicContainer: document.getElementById('magic-animation-container'),
+    kaashFieldContainer: document.getElementById('kaash-field-container'),
     magicBtnText: document.getElementById('magic-btn-text'),
     shareCountBadge: document.getElementById('share-count-badge'),
     shareProgressBar: document.getElementById('share-progress-bar'),
@@ -1072,10 +1073,10 @@
     } catch (e) {}
   }
 
-  // 30-Second Shiuli Rain & Kaash Phool Rising Animation Engine
+  // 30-Second Shiuli Rain & Wind-Swaying Kaash Grass Field Engine
   const SHIULI_SVG = `<svg width="24" height="24" viewBox="0 0 24 24"><g transform="translate(12,12)"><circle r="2.8" fill="#FF6B00"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(72)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(144)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(216)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(288)"/></g></svg>`;
 
-  const KAASH_SVG = `<svg width="34" height="80" viewBox="0 0 34 80"><path d="M17 80 C 17 45, 19 22, 17 0" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" fill="none"/><path d="M17 5 Q 7 16 0 28 Q 14 22 17 10" fill="rgba(255,255,255,0.85)"/><path d="M17 10 Q 27 22 34 32 Q 20 25 17 15" fill="rgba(255,255,255,0.85)"/><path d="M17 22 Q 5 36 0 48 Q 15 40 17 28" fill="rgba(255,255,255,0.8)"/><path d="M17 28 Q 29 42 34 52 Q 20 44 17 34" fill="rgba(255,255,255,0.8)"/><path d="M17 38 Q 7 52 2 62 Q 15 54 17 44" fill="rgba(255,255,255,0.75)"/></svg>`;
+  const KAASH_STALK_SVG = `<svg width="45" height="220" viewBox="0 0 45 220"><path d="M22 220 C 22 140, 24 70, 20 0" stroke="#6C7F32" stroke-width="2.5" fill="none"/><path d="M20 0 L 10 25 L 22 20 L 8 45 L 24 38 L 6 68 L 26 58 L 10 90 L 25 80 L 12 120 L 22 110 Z" fill="#FFE89C"/><path d="M20 0 L 28 22 L 18 20 L 32 42 L 16 38 L 34 65 L 18 58 L 32 88 L 20 80 L 30 115 Z" fill="#FFC83B"/><path d="M20 5 L 14 30 L 22 26 L 12 55 L 23 48 L 11 78 L 20 100 Z" fill="#FFFFFF" opacity="0.85"/></svg>`;
 
   let magicSpawners = [];
   let magicCountdownTimer = null;
@@ -1092,6 +1093,10 @@
     state.isMagicAnimating = true;
     if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.classList.add('active');
 
+    // Grow Kaash Grass Field at Bottom
+    renderKaashField();
+    if (DOM.kaashFieldContainer) DOM.kaashFieldContainer.classList.add('active');
+
     let secondsLeft = 30;
     if (DOM.magicBtnText) DOM.magicBtnText.textContent = `উৎসব (${secondsLeft}s)`;
 
@@ -1103,21 +1108,20 @@
       }
     }, 1000);
 
+    // Spawn Shiuli flowers raining down from top
     const shiuliInterval = setInterval(() => {
       spawnShiuliFlower();
-    }, 260);
+    }, 240);
 
-    const kaashInterval = setInterval(() => {
-      spawnKaashGrass();
-    }, 380);
-
-    magicSpawners.push(shiuliInterval, kaashInterval);
+    magicSpawners.push(shiuliInterval);
   }
 
   function stopFestiveMagicAnimation() {
     state.isMagicAnimating = false;
     if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.classList.remove('active');
     if (DOM.magicBtnText) DOM.magicBtnText.textContent = 'উৎসবের আনন্দ';
+
+    if (DOM.kaashFieldContainer) DOM.kaashFieldContainer.classList.remove('active');
 
     if (magicCountdownTimer) {
       clearInterval(magicCountdownTimer);
@@ -1134,6 +1138,28 @@
     }
   }
 
+  function renderKaashField() {
+    if (!DOM.kaashFieldContainer) return;
+    DOM.kaashFieldContainer.innerHTML = '';
+
+    const stalkCount = Math.floor(window.innerWidth / 35) + 6;
+    for (let i = 0; i < stalkCount; i++) {
+      const stalk = document.createElement('div');
+      stalk.className = 'kaash-stalk';
+      stalk.innerHTML = KAASH_STALK_SVG;
+
+      const scale = 0.75 + Math.random() * 0.55;
+      const duration = 2.2 + Math.random() * 2.6;
+      const delay = Math.random() * -3.0;
+
+      stalk.style.animationDuration = `${duration}s`;
+      stalk.style.animationDelay = `${delay}s`;
+      stalk.style.transform = `scale(${scale})`;
+
+      DOM.kaashFieldContainer.appendChild(stalk);
+    }
+  }
+
   function spawnShiuliFlower() {
     if (!DOM.magicContainer || !state.isMagicAnimating) return;
     const el = document.createElement('div');
@@ -1143,27 +1169,6 @@
     const posX = Math.random() * 95;
     const duration = 3.5 + Math.random() * 3.5;
     const scale = 0.7 + Math.random() * 0.7;
-
-    el.style.left = `${posX}vw`;
-    el.style.animationDuration = `${duration}s`;
-    el.style.transform = `scale(${scale})`;
-
-    DOM.magicContainer.appendChild(el);
-
-    setTimeout(() => {
-      if (el.parentNode) el.parentNode.removeChild(el);
-    }, duration * 1000);
-  }
-
-  function spawnKaashGrass() {
-    if (!DOM.magicContainer || !state.isMagicAnimating) return;
-    const el = document.createElement('div');
-    el.className = 'kaash-particle';
-    el.innerHTML = KAASH_SVG;
-
-    const posX = Math.random() * 95;
-    const duration = 4.0 + Math.random() * 4.0;
-    const scale = 0.6 + Math.random() * 0.8;
 
     el.style.left = `${posX}vw`;
     el.style.animationDuration = `${duration}s`;
