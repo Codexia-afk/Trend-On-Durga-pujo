@@ -249,6 +249,28 @@
 
   // TAB 3: "বর্তমান যুগ" (Present Era - Jukebox q-G7GlrGRKU & New Age Puja Songs)
   const playlistPresentEra = [
+    // --- Best of Durga Puja Hits SVF Jukebox (0RUhpbHwM90) ---
+    {
+      videoId: "0RUhpbHwM90",
+      startTime: 0,
+      title: "বেস্ট অফ দুর্গাপূজা হিটস — ১ (Best of Durga Puja Hits - SVF)",
+      artist: "SVF Music • Best Durga Puja Hits",
+      era: "বর্তমান যুগ • SVF জুকবক্স"
+    },
+    {
+      videoId: "0RUhpbHwM90",
+      startTime: 200,
+      title: "বেস্ট অফ দুর্গাপূজা হিটস — ২ (SVF Durga Pujo Hits Track 2)",
+      artist: "এসভিএফ মিউজিক • পূজা ধামাকা",
+      era: "বর্তমান যুগ • মেলোডি পপ"
+    },
+    {
+      videoId: "0RUhpbHwM90",
+      startTime: 400,
+      title: "বেস্ট অফ দুর্গাপূজা হিটস — ৩ (SVF Durga Pujo Hits Track 3)",
+      artist: "শারদীয়া উৎসব অ্যানথেমস",
+      era: "বর্তমান যুগ • ড্যান্স হিটস"
+    },
     // --- New Age Puja Jukebox (q-G7GlrGRKU) ---
     {
       videoId: "q-G7GlrGRKU",
