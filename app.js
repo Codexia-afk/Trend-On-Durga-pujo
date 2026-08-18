@@ -247,7 +247,7 @@
     }
   ];
 
-  // TAB 3: "বর্তমান যুগ" (Present Era - SVF & New Age Bengali Puja Anthems)
+  // TAB 3: "বর্তমান যুগ" (Present Era - Individual Official YouTube Video Hits)
   const playlistPresentEra = [
     {
       videoId: "hnkfDCbULxk",
@@ -257,39 +257,32 @@
       era: "বর্তমান যুগ • নিউ রিলিজ"
     },
     {
-      videoId: "hnkfDCbULxk",
-      startTime: 120,
+      videoId: "sPuZ0Q3KDWo",
+      startTime: 0,
+      title: "দুর্গা মা (Dugga Ma)",
+      artist: "অরিজিৎ সিং • Bolo Dugga Maiki",
+      era: "বর্তমান যুগ • অরিজিৎ সিং হিট"
+    },
+    {
+      videoId: "xlElO06nQy8",
+      startTime: 0,
+      title: "দুর্গা এলো (Dugga Elo)",
+      artist: "মোনালী ঠাকুর • Zee Music Bangla",
+      era: "বর্তমান যুগ • শারদীয় অ্যানথেম"
+    },
+    {
+      videoId: "gS6S7G8a5lE",
+      startTime: 0,
       title: "বলো দুর্গা এলো রে (Bolo Dugga Elo Re)",
       artist: "সুনিধি চৌহান & কৌশিক-গুড্ডু • SVF Music",
-      era: "বর্তমান যুগ • পূজা অ্যানথেম"
+      era: "বর্তমান যুগ • উৎসব গান"
     },
     {
-      videoId: "hnkfDCbULxk",
-      startTime: 240,
-      title: "দুর্গা মা (Dugga Ma)",
-      artist: "অরিজিৎ সিং • SVF Music Hit",
-      era: "বর্তমান যুগ • মেলোডি পপ"
-    },
-    {
-      videoId: "hnkfDCbULxk",
-      startTime: 360,
-      title: "দুর্গা এলো রে (Dugga Elo)",
-      artist: "মোনালী ঠাকুর & আকৃতি কক্কর",
-      era: "বর্তমান যুগ • ড্যান্স ট্র্যাকিং"
-    },
-    {
-      videoId: "hnkfDCbULxk",
-      startTime: 480,
+      videoId: "id5_3dKvEBg",
+      startTime: 0,
       title: "ঢাক বাজো কাশের বনে (Dhak Baja Kash Bhorja)",
       artist: "বনি সেনগুপ্ত & রূপম ইসলাম • New Age",
       era: "বর্তমান যুগ • ঢাক রক পপ"
-    },
-    {
-      videoId: "hnkfDCbULxk",
-      startTime: 600,
-      title: "বলো দুর্গা মাই কি জয় (Bolo Dugga Ma Ki Joy)",
-      artist: "নিউ এজ পূজা সং কালেকশন • SVF Hits",
-      era: "বর্তমান যুগ • উৎসব উদযাপন"
     }
   ];
 
