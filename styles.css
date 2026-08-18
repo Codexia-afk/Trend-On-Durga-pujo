@@ -129,11 +129,17 @@ body {
 /* Header Navigation Bar */
 .top-nav {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  flex-wrap: wrap;
   padding-top: 4px;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 /* Ultra-Transparent Glass Pill Button (Doesn't guard/block background image) */
@@ -262,12 +268,12 @@ body {
   animation: drum-shake 0.4s infinite alternate;
 }
 
-/* Nav Actions Group */
+/* Nav Actions Group (Right Column Top to Bottom) */
 .nav-actions {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
 }
 
 .lang-btn {
