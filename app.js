@@ -1302,15 +1302,17 @@
     if (DOM.themeSwitchBtn) DOM.themeSwitchBtn.addEventListener('click', switchTheme);
     if (DOM.bgRefreshBtn) DOM.bgRefreshBtn.addEventListener('click', switchTheme);
     if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.addEventListener('click', toggleFestiveMagicAnimation);
-    DOM.langToggleBtn.addEventListener('click', toggleLanguage);
+    if (DOM.langToggleBtn) DOM.langToggleBtn.addEventListener('click', toggleLanguage);
 
     // Tab Buttons
-    DOM.tabBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const tabKey = btn.getAttribute('data-tab');
-        switchTab(tabKey);
+    if (DOM.tabBtns) {
+      DOM.tabBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const tabKey = btn.getAttribute('data-tab');
+          switchTab(tabKey);
+        });
       });
-    });
+    }
 
     // Dhak Sound Toggle Button
     if (DOM.dhakToggleBtn) {
@@ -1325,22 +1327,24 @@
     }
 
     // Transport Buttons
-    DOM.btnPlayPause.addEventListener('click', togglePlayPause);
-    DOM.btnNextTrack.addEventListener('click', nextTrack);
-    DOM.btnPrevTrack.addEventListener('click', prevTrack);
+    if (DOM.btnPlayPause) DOM.btnPlayPause.addEventListener('click', togglePlayPause);
+    if (DOM.btnNextTrack) DOM.btnNextTrack.addEventListener('click', nextTrack);
+    if (DOM.btnPrevTrack) DOM.btnPrevTrack.addEventListener('click', prevTrack);
     if (DOM.btnSkipBack) DOM.btnSkipBack.addEventListener('click', skipBackward10);
     if (DOM.btnSkipForward) DOM.btnSkipForward.addEventListener('click', skipForward10);
 
     // Seek Slider
-    DOM.seekSlider.addEventListener('input', (e) => {
-      if (ytPlayer && state.isPlayerReady) {
-        const dur = ytPlayer.getDuration();
-        if (dur) {
-          const seekTo = (e.target.value / 100) * dur;
-          ytPlayer.seekTo(seekTo, true);
+    if (DOM.seekSlider) {
+      DOM.seekSlider.addEventListener('input', (e) => {
+        if (ytPlayer && state.isPlayerReady) {
+          const dur = ytPlayer.getDuration();
+          if (dur) {
+            const seekTo = (e.target.value / 100) * dur;
+            ytPlayer.seekTo(seekTo, true);
+          }
         }
-      }
-    });
+      });
+    }
 
     // Volume Control & Speaker Mute Toggle
     if (DOM.btnVolumeToggle) {
@@ -1349,23 +1353,25 @@
         if (!ytPlayer || !state.isPlayerReady) return;
         if (ytPlayer.isMuted()) {
           ytPlayer.unMute();
-          DOM.volumeSlider.value = lastVolume;
+          if (DOM.volumeSlider) DOM.volumeSlider.value = lastVolume;
           ytPlayer.setVolume(lastVolume * 100);
         } else {
-          lastVolume = parseFloat(DOM.volumeSlider.value) || 0.8;
+          lastVolume = DOM.volumeSlider ? (parseFloat(DOM.volumeSlider.value) || 0.8) : 0.8;
           ytPlayer.mute();
-          DOM.volumeSlider.value = 0;
+          if (DOM.volumeSlider) DOM.volumeSlider.value = 0;
         }
       });
     }
 
-    DOM.volumeSlider.addEventListener('input', (e) => {
-      if (ytPlayer && state.isPlayerReady) {
-        const val = parseFloat(e.target.value);
-        ytPlayer.setVolume(val * 100);
-        if (val > 0 && ytPlayer.isMuted()) ytPlayer.unMute();
-      }
-    });
+    if (DOM.volumeSlider) {
+      DOM.volumeSlider.addEventListener('input', (e) => {
+        if (ytPlayer && state.isPlayerReady) {
+          const val = parseFloat(e.target.value);
+          ytPlayer.setVolume(val * 100);
+          if (val > 0 && ytPlayer.isMuted()) ytPlayer.unMute();
+        }
+      });
+    }
 
     // Modal Triggers
     if (DOM.btnOpenDrawer) DOM.btnOpenDrawer.addEventListener('click', () => openModal('modal-playlist'));
@@ -1391,11 +1397,13 @@
       });
     });
 
-    DOM.btnVirtualChanda.addEventListener('click', () => {
-      state.virtualChandaCount++;
-      DOM.chandaCountText.textContent = state.virtualChandaCount;
-      showToast('🪔 ভার্চুয়াল ধুনুচি অর্পণ করা হয়েছে!', '❤️');
-    });
+    if (DOM.btnVirtualChanda) {
+      DOM.btnVirtualChanda.addEventListener('click', () => {
+        state.virtualChandaCount++;
+        if (DOM.chandaCountText) DOM.chandaCountText.textContent = state.virtualChandaCount;
+        showToast('🪔 ভার্চুয়াল ধুনুচি অর্পণ করা হয়েছে!', '❤️');
+      });
+    }
   }
 
   document.addEventListener('DOMContentLoaded', init);
