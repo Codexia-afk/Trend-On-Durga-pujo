@@ -46,42 +46,73 @@
 
     <!-- Top Floating Navbar -->
     <header class="top-nav">
-      <!-- Left Action Pills -->
+      
+      <!-- Left Side Language Toggle -->
       <div class="nav-left">
-        <!-- Dhak Sound Small Button with Play/Pause State Icon -->
+        <button class="glass-pill lang-btn" id="lang-toggle-btn" title="ভাষা পরিবর্তন (Language Toggle)">
+          <span class="globe-icon">🌐</span>
+          <span class="hover-label">EN | বাংলা</span>
+        </button>
+      </div>
+
+      <!-- Center Action Buttons (Dhak Sound & Festive Magic) -->
+      <div class="nav-center">
+        <!-- Dhak Sound Button with State Icon -->
         <button class="glass-pill dhak-pill-btn" id="dhak-toggle-btn" title="ঢাকের আওয়াজ চালু/বন্ধ করুন">
           <span class="dhak-state-icon" id="dhak-btn-state">▶</span>
           <span class="dhak-pill-icon" id="dhak-btn-icon">🥁</span>
-          <span id="dhak-btn-text" data-i18n="dhak_btn">ঢাকের আওয়াজ</span>
+          <span class="hover-label" id="dhak-btn-text" data-i18n="dhak_btn">ঢাকের আওয়াজ</span>
         </button>
 
-        <!-- Theme Switcher Pill -->
-        <button class="glass-pill theme-pill" id="theme-switch-btn" title="দৃশ্যাবলী পরিবর্তন করুন">
-          <span class="sparkle-icon">✦</span>
-          <span id="theme-btn-text">দৃশ্যাবলী: সন্ধ্যা আরতি</span>
-        </button>
-
-        <!-- 30-Second Festive Magic Animation Button (Shiuli & Kaash Phool) -->
-        <button class="glass-pill festive-magic-btn" id="festive-magic-btn" title="৩০ সেকেন্ডের শেউলি ও কাশ ফুল বৃষ্টি চালু করুন">
+        <!-- 30-Second Festive Magic Animation Button (Shiuli Flowers Rain) -->
+        <button class="glass-pill festive-magic-btn" id="festive-magic-btn" title="৩০ সেকেন্ডের শেউলি ফুল বৃষ্টি">
           <span>🌸</span>
-          <span id="magic-btn-text">উৎসবের আনন্দ</span>
+          <span class="hover-label" id="magic-btn-text">উৎসবের আনন্দ</span>
         </button>
       </div>
 
-      <!-- Right Action Pills -->
+      <!-- Right Side Action Buttons (Spotify, YouTube, 3-Line Song Drawer Menu) -->
       <div class="nav-actions">
-        <button class="glass-pill lang-btn" id="lang-toggle-btn">
-          <span>EN</span> | <strong style="color: var(--gold-primary);">বাংলা</strong>
-        </button>
+        <!-- Spotify Link Button -->
+        <a href="https://open.spotify.com" target="_blank" rel="noopener" class="glass-pill btn-spotify-top" id="btn-spotify-link" title="Spotify-তে পূজা গান শুনুন">
+          <svg class="brand-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm5.521 17.341c-.217.357-.68.471-1.037.254-2.842-1.737-6.422-2.13-10.637-1.166-.407.094-.814-.162-.907-.568-.094-.407.162-.814.568-.907 4.619-1.056 8.583-.604 11.74 1.328.358.217.472.68.255 1.057zm1.472-3.275c-.273.443-.854.584-1.298.312-3.252-1.998-8.21-2.58-12.057-1.411-.497.151-1.023-.13-1.173-.628-.151-.497.13-1.023.628-1.173 4.402-1.336 9.873-.687 13.588 1.599.444.272.585.854.312 1.298zm.126-3.414c-3.9-2.316-10.334-2.53-14.073-1.395-.6.182-1.23-.167-1.412-.767-.182-.6.167-1.23.767-1.412 4.29-1.303 11.393-1.051 15.892 1.62.539.32.716 1.021.396 1.56-.32.538-1.02.716-1.56.395z"/>
+          </svg>
+          <span class="hover-label">Spotify</span>
+        </a>
 
-        <button class="glass-pill" id="btn-open-support">
-          <span>❤️</span> <span data-i18n="nav_support">সহযোগিতা</span>
+        <!-- YouTube Link Button -->
+        <a href="https://www.youtube.com" target="_blank" rel="noopener" class="glass-pill btn-yt-top" id="btn-ytmusic-link" title="YouTube-এ গান শুনুন">
+          <svg class="brand-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span class="hover-label">YouTube</span>
+        </a>
+
+        <!-- 3-Line Hamburger Menu for Song Drawer -->
+        <button class="glass-pill hamburger-btn" id="btn-open-drawer" title="গানের তালিকা (Song List Drawer)">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+          <span class="hover-label">গানের তালিকা</span>
         </button>
       </div>
+
     </header>
 
     <!-- Magic Particle Container for Shiuli Flowers Rain -->
     <div id="magic-animation-container"></div>
+
+    <!-- Bottom Left Floating Refresh Picture Button (No Topic Showcase) -->
+    <button class="glass-pill floating-refresh-btn" id="bg-refresh-btn" title="নতুন দৃশ্যপট দেখুন">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="refresh-icon-svg">
+        <path d="M21.5 2v6h-6M2.5 22v-6h6"></path>
+        <path d="M2 11.5a10 10 0 0 1 18.8-4.3L21.5 8M22 12.5a10 10 0 0 1-18.8 4.2L2.5 16"></path>
+      </svg>
+      <span class="hover-label">নতুন দৃশ্যপট</span>
+    </button>
 
     <!-- Center Hero Section -->
     <main class="hero-section">
@@ -117,7 +148,7 @@
       </button>
     </div>
 
-    <!-- Main Player Row: Vinyl + Metadata + Transport + External Links -->
+    <!-- Main Player Row: Vinyl + Metadata + Transport + Volume -->
     <div class="player-main-row">
       
       <!-- Track Info Group -->
@@ -152,35 +183,21 @@
         <button class="control-btn" id="btn-next-track" title="পরবর্তী গান">⏭</button>
       </div>
 
-      <!-- Extra Controls (Spotify, YouTube Music, Playlist Drawer) -->
-      <div class="extra-controls-group">
-        <div class="volume-slider-wrap">
-          <span style="font-size: 0.9rem; color: var(--text-muted);" id="volume-icon">🔊</span>
-          <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.05" value="0.8">
-        </div>
-
-        <a href="https://open.spotify.com" target="_blank" rel="noopener" class="ext-pill btn-spotify" id="btn-spotify-link" title="Spotify-তে এই গানটি শুনুন">
-          <svg class="brand-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm5.521 17.341c-.217.357-.68.471-1.037.254-2.842-1.737-6.422-2.13-10.637-1.166-.407.094-.814-.162-.907-.568-.094-.407.162-.814.568-.907 4.619-1.056 8.583-.604 11.74 1.328.358.217.472.68.255 1.057zm1.472-3.275c-.273.443-.854.584-1.298.312-3.252-1.998-8.21-2.58-12.057-1.411-.497.151-1.023-.13-1.173-.628-.151-.497.13-1.023.628-1.173 4.402-1.336 9.873-.687 13.588 1.599.444.272.585.854.312 1.298zm.126-3.414c-3.9-2.316-10.334-2.53-14.073-1.395-.6.182-1.23-.167-1.412-.767-.182-.6.167-1.23.767-1.412 4.29-1.303 11.393-1.051 15.892 1.62.539.32.716 1.021.396 1.56-.32.538-1.02.716-1.56.395z"/>
+      <!-- Professional Volume Control with Vector Speaker SVG -->
+      <div class="volume-slider-wrap">
+        <button class="volume-btn" id="btn-volume-toggle" title="শব্দ ভলিউম (Volume)">
+          <svg class="speaker-svg" id="speaker-icon-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
           </svg>
-          <span>Spotify</span>
-        </a>
-
-        <a href="https://www.youtube.com" target="_blank" rel="noopener" class="ext-pill btn-ytmusic" id="btn-ytmusic-link" title="YouTube-এ এই গানটি শুনুন">
-          <svg class="brand-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-          </svg>
-          <span>YouTube</span>
-        </a>
-
-        <button class="btn-action-pill" id="btn-open-drawer">
-          <span>📜</span> <span data-i18n="btn_playlist">গান নির্বাচন</span>
         </button>
+        <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.05" value="0.8">
       </div>
 
     </div>
 
-    <!-- Progress / Seek Bar Row -->
+    <!-- Progress / Seek Bar Row (Aligned Perfectly Inside Inner Dock Bounds) -->
     <div class="progress-bar-row">
       <span class="time-stamp" id="curr-time">00:00</span>
       <input type="range" class="seek-slider" id="seek-slider" min="0" max="100" value="0">

@@ -421,6 +421,9 @@
   // DOM Elements
   const DOM = {
     bgLayers: document.querySelectorAll('.bg-layer'),
+    bgRefreshBtn: document.getElementById('bg-refresh-btn'),
+    btnVolumeToggle: document.getElementById('btn-volume-toggle'),
+    speakerIconSvg: document.getElementById('speaker-icon-svg'),
     themeSwitchBtn: document.getElementById('theme-switch-btn'),
     themeBtnText: document.getElementById('theme-btn-text'),
     onlineCountText: document.getElementById('online-count-text'),
@@ -1236,8 +1239,9 @@
 
   // Event Listeners Binding
   function setupEventListeners() {
-    // Theme Switcher & Festive Magic Animation Buttons
-    DOM.themeSwitchBtn.addEventListener('click', switchTheme);
+    // Theme Switcher & Refresh Picture Button
+    if (DOM.themeSwitchBtn) DOM.themeSwitchBtn.addEventListener('click', switchTheme);
+    if (DOM.bgRefreshBtn) DOM.bgRefreshBtn.addEventListener('click', switchTheme);
     if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.addEventListener('click', toggleFestiveMagicAnimation);
     DOM.langToggleBtn.addEventListener('click', toggleLanguage);
 
@@ -1279,10 +1283,28 @@
       }
     });
 
-    // Volume Slider
+    // Volume Control & Speaker Mute Toggle
+    if (DOM.btnVolumeToggle) {
+      let lastVolume = 0.8;
+      DOM.btnVolumeToggle.addEventListener('click', () => {
+        if (!ytPlayer || !state.isPlayerReady) return;
+        if (ytPlayer.isMuted()) {
+          ytPlayer.unMute();
+          DOM.volumeSlider.value = lastVolume;
+          ytPlayer.setVolume(lastVolume * 100);
+        } else {
+          lastVolume = parseFloat(DOM.volumeSlider.value) || 0.8;
+          ytPlayer.mute();
+          DOM.volumeSlider.value = 0;
+        }
+      });
+    }
+
     DOM.volumeSlider.addEventListener('input', (e) => {
       if (ytPlayer && state.isPlayerReady) {
-        ytPlayer.setVolume(parseFloat(e.target.value) * 100);
+        const val = parseFloat(e.target.value);
+        ytPlayer.setVolume(val * 100);
+        if (val > 0 && ytPlayer.isMuted()) ytPlayer.unMute();
       }
     });
 

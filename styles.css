@@ -129,17 +129,117 @@ body {
 /* Header Navigation Bar */
 .top-nav {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding-top: 4px;
+  position: relative;
+  z-index: 10;
 }
 
 .nav-left {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Animated Hover Expand Label for Icon Buttons */
+.hover-label {
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin 0.25s ease;
+}
+
+.glass-pill:hover .hover-label,
+.control-btn:hover .hover-label,
+.floating-refresh-btn:hover .hover-label,
+.hamburger-btn:hover .hover-label {
+  max-width: 140px;
+  opacity: 1;
+  margin-left: 6px;
+}
+
+/* Top Right Brand & Hamburger Buttons */
+.btn-spotify-top {
+  color: #1DB954;
+  border-color: rgba(29, 185, 84, 0.35);
+}
+
+.btn-spotify-top:hover {
+  background: rgba(29, 185, 84, 0.25);
+  border-color: #1DB954;
+  box-shadow: 0 0 16px rgba(29, 185, 84, 0.4);
+}
+
+.btn-yt-top {
+  color: #FF4E4E;
+  border-color: rgba(255, 78, 78, 0.35);
+}
+
+.btn-yt-top:hover {
+  background: rgba(255, 0, 0, 0.25);
+  border-color: #FF0000;
+  box-shadow: 0 0 16px rgba(255, 0, 0, 0.4);
+}
+
+.hamburger-btn {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hamburger-btn:hover {
+  background: rgba(255, 184, 0, 0.25);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  box-shadow: 0 0 16px rgba(255, 184, 0, 0.4);
+}
+
+/* Bottom Left Floating Refresh Picture Button (No Topic Showcase) */
+.floating-refresh-btn {
+  position: fixed;
+  bottom: 145px;
+  left: 24px;
+  z-index: 105;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  padding: 10px 14px;
+  border-radius: 9999px;
+  color: #FFFFFF;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.floating-refresh-btn:hover {
+  background: rgba(255, 184, 0, 0.25);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 184, 0, 0.4);
+}
+
+.floating-refresh-btn:hover #refresh-icon-svg {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease;
 }
 
 /* Ultra-Transparent Glass Pill Button (Doesn't guard/block background image) */
@@ -803,99 +903,66 @@ input:checked + .slider:before {
   gap: 10px;
 }
 
+/* Professional Volume Control with SVG Speaker Icon */
 .volume-slider-wrap {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.volume-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.volume-btn:hover {
+  color: var(--gold-primary);
+  transform: scale(1.1);
+}
+
+.speaker-svg {
+  display: inline-block;
+  vertical-align: middle;
+  transition: stroke 0.2s ease;
 }
 
 .volume-slider {
-  width: 70px;
+  width: 75px;
+  height: 4px;
   accent-color: var(--gold-primary);
   cursor: pointer;
+  border-radius: 4px;
 }
 
-.ext-pill {
-  border-radius: var(--radius-pill);
-  padding: 6px 14px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.ext-pill .brand-icon {
-  display: inline-block;
-  vertical-align: middle;
-  transition: fill 0.25s ease, transform 0.25s ease;
-}
-
-.ext-pill:hover .brand-icon {
-  transform: scale(1.15);
-}
-
-.btn-spotify {
-  background: rgba(29, 185, 84, 0.15);
-  border: 1px solid rgba(29, 185, 84, 0.4);
-  color: #1DB954;
-}
-
-.btn-spotify:hover {
-  background: #1DB954;
-  color: #000;
-  box-shadow: 0 0 12px rgba(29, 185, 84, 0.5);
-}
-
-.btn-ytmusic {
-  background: rgba(255, 0, 0, 0.15);
-  border: 1px solid rgba(255, 0, 0, 0.4);
-  color: #FF4E4E;
-}
-
-.btn-ytmusic:hover {
-  background: #FF0000;
-  color: #FFF;
-  box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
-}
-
-.btn-action-pill {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--glass-border-light);
-  border-radius: var(--radius-pill);
-  padding: 6px 14px;
-  color: var(--text-main);
-  font-family: var(--font-bangla);
-  font-size: 0.85rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.btn-action-pill:hover {
-  background: rgba(255, 184, 0, 0.2);
-  border-color: var(--gold-primary);
-  color: var(--gold-primary);
-}
-
-/* Progress / Seek Bar Row */
+/* Progress / Seek Bar Row (Aligned Perfectly Inside Inner Capsule Bounds) */
 .progress-bar-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: 100%;
+  gap: 14px;
+  width: calc(100% - 32px);
+  margin: 2px auto 0 auto;
+  padding: 0 8px;
 }
 
 .time-stamp {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
   min-width: 38px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 .seek-slider {
@@ -904,7 +971,7 @@ input:checked + .slider:before {
   border-radius: 5px;
   accent-color: var(--gold-primary);
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* First-Load Audio Tap Gesture Overlay */
