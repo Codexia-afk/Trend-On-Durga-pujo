@@ -247,94 +247,115 @@
     }
   ];
 
-  // TAB 3: "বর্তমান যুগ" (Present Era - Jukebox q-G7GlrGRKU & New Age Puja Songs)
+  // TAB 3: "বর্তমান যুগ" (Present Era - Fully Segregated Tracklist with Titles & Artists)
   const playlistPresentEra = [
-    // --- Best of Durga Puja Hits SVF Jukebox (0RUhpbHwM90) ---
+    // --- SVF Best of Durga Puja Hits Jukebox (0RUhpbHwM90) ---
     {
       videoId: "0RUhpbHwM90",
       startTime: 0,
-      title: "বেস্ট অফ দুর্গাপূজা হিটস — ১ (Best of Durga Puja Hits - SVF)",
-      artist: "SVF Music • Best Durga Puja Hits",
-      era: "বর্তমান যুগ • SVF জুকবক্স"
+      title: "পূজার গান (Pujar Gaan - Special Title Track)",
+      artist: "কৌশিক-গুড্ডু & SVF All Stars",
+      era: "বর্তমান যুগ • শারদ অ্যানথেম"
     },
     {
       videoId: "0RUhpbHwM90",
-      startTime: 200,
-      title: "বেস্ট অফ দুর্গাপূজা হিটস — ২ (SVF Durga Pujo Hits Track 2)",
-      artist: "এসভিএফ মিউজিক • পূজা ধামাকা",
+      startTime: 390,
+      title: "দুগ্গা মা (Dugga Ma - Bolo Dugga Maiki)",
+      artist: "অরিজিৎ সিং • SVF Hits",
+      era: "বর্তমান যুগ • অরিজিৎ সিং"
+    },
+    {
+      videoId: "0RUhpbHwM90",
+      startTime: 547,
+      title: "এলো যে মা (Elo Je Ma)",
+      artist: "অনুপম রায় & দল • বিশেষ পুজো গান",
       era: "বর্তমান যুগ • মেলোডি পপ"
     },
     {
       videoId: "0RUhpbHwM90",
-      startTime: 400,
-      title: "বেস্ট অফ দুর্গাপূজা হিটস — ৩ (SVF Durga Pujo Hits Track 3)",
-      artist: "শারদীয়া উৎসব অ্যানথেমস",
-      era: "বর্তমান যুগ • ড্যান্স হিটস"
-    },
-    // --- New Age Puja Jukebox (q-G7GlrGRKU) ---
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 0,
-      title: "বর্তমান যুগ পূজার স্পেশাল জুখবক্স — ১ (New Age Jukebox Track 1)",
-      artist: "বর্তমান যুগের সেরা পূজা অ্যানথেম",
-      era: "বর্তমান যুগ • ধামাকা জুখবক্স"
+      startTime: 824,
+      title: "জাগো উমা (Jago Uma - Agomoni Special)",
+      artist: "অরিজিৎ সিং & শ্রেয়া ঘোষাল",
+      era: "বর্তমান যুগ • আগমনী সুর"
     },
     {
-      videoId: "q-G7GlrGRKU",
-      startTime: 180,
-      title: "বর্তমান যুগ পূজার স্পেশাল জুখবক্স — ২ (New Age Jukebox Track 2)",
-      artist: "বাংলা উৎসব পপ কালেকশন",
-      era: "বর্তমান যুগ • শারদীয়া সুর"
+      videoId: "0RUhpbHwM90",
+      startTime: 986,
+      title: "আগমনীর গান (Agomonir Gaan)",
+      artist: "ঐতিহ্যবাহী দেবীবন্ধনা কালেকশন",
+      era: "বর্তমান যুগ • চণ্ডী স্তোত্র"
     },
     {
-      videoId: "q-G7GlrGRKU",
-      startTime: 360,
-      title: "বর্তমান যুগ পূজার স্পেশাল জুখবক্স — ৩ (New Age Jukebox Track 3)",
-      artist: "ঢাক ও ড্যান্স উৎসব বিট",
-      era: "বর্তমান যুগ • ড্যান্স হিটস"
+      videoId: "0RUhpbHwM90",
+      startTime: 1328,
+      title: "বলো দুগ্গা এলো (Bolo Dugga Elo)",
+      artist: "সুনিধি চৌহান & কৌশিক-গুড্ডু",
+      era: "বর্তমান যুগ • পূজা উৎসব"
     },
     {
-      videoId: "q-G7GlrGRKU",
-      startTime: 540,
-      title: "বর্তমান যুগ পূজার স্পেশাল জুখবক্স — ৪ (New Age Jukebox Track 4)",
-      artist: "নিউ এজ পূজা সং কালেকশন",
-      era: "বর্তমান যুগ • উৎসব মেলোডি"
+      videoId: "0RUhpbHwM90",
+      startTime: 1524,
+      title: "এবার যেন অন্যরকম পুজো (Ebar Jeno Onyorokom Pujo)",
+      artist: "রূপম ইসলাম & বাংলা ব্যান্ড স্পেশাল",
+      era: "বর্তমান যুগ • রক অ্যানথেম"
     },
-    // --- Individual Official Video Hits ---
+    {
+      videoId: "0RUhpbHwM90",
+      startTime: 1734,
+      title: "ঢাকের তালে কোমর দোলে (Dhaker Taale)",
+      artist: "অভিজিৎ ভট্টাচার্য & পরিনীতা • পরাণ যায় জ্বলিয়া রে",
+      era: "বর্তমান যুগ • শারদীয় ড্যান্স"
+    },
+    {
+      videoId: "0RUhpbHwM90",
+      startTime: 2010,
+      title: "এলো রে পুজো এলো (Elo Re Pujo Elo)",
+      artist: "নকাশ আজিজ & সেঁজুতি দাস",
+      era: "বর্তমান যুগ • উৎসব ধামাকা"
+    },
+    {
+      videoId: "0RUhpbHwM90",
+      startTime: 3181,
+      title: "লাগে উরা ধুরা (Lage Ura Dhura)",
+      artist: "প্রীতম & তৌফিস কালেক্টিভ",
+      era: "বর্তমান যুগ • ব্লকবাস্টার হিট"
+    },
+
+    // --- Individual Official Single Videos ---
     {
       videoId: "hnkfDCbULxk",
       startTime: 0,
       title: "উমা আসে নতুন সাজে (Uma Ashe Notun Saje)",
-      artist: "অঙ্কিতা ভট্টাচার্য • SVF Music",
-      era: "বর্তমান যুগ • নিউ রিলিজ"
+      artist: "অঙ্কিতা ভট্টাচার্য • Zee Bangla Special",
+      era: "বর্তমান যুগ • নতুন প্রকাশ"
     },
     {
       videoId: "sPuZ0Q3KDWo",
       startTime: 0,
-      title: "দুর্গা মা (Dugga Ma)",
-      artist: "অরিজিৎ সিং • Bolo Dugga Maiki",
-      era: "বর্তমান যুগ • অরিজিৎ সিং হিট"
+      title: "দুগ্গা মা (Dugga Ma Official Video)",
+      artist: "অরিজিৎ সিং • Bolo Dugga Maiki Movie",
+      era: "বর্তমান যুগ • ভিডিও পপ"
     },
     {
       videoId: "xlElO06nQy8",
       startTime: 0,
-      title: "দুর্গা এলো (Dugga Elo)",
+      title: "দুর্গা এলো (Dugga Elo Official Video)",
       artist: "মোনালী ঠাকুর • Zee Music Bangla",
-      era: "বর্তমান যুগ • শারদীয় অ্যানথেম"
+      era: "বর্তমান যুগ • একক হিট"
     },
     {
       videoId: "gS6S7G8a5lE",
       startTime: 0,
-      title: "বলো দুর্গা এলো রে (Bolo Dugga Elo Re)",
+      title: "বলো দুর্গা এলো রে (Bolo Dugga Elo Video)",
       artist: "সুনিধি চৌহান & কৌশিক-গুড্ডু • SVF Music",
-      era: "বর্তমান যুগ • উৎসব গান"
+      era: "বর্তমান যুগ • হাইলাইটস"
     },
     {
       videoId: "id5_3dKvEBg",
       startTime: 0,
       title: "ঢাক বাজো কাশের বনে (Dhak Baja Kash Bhorja)",
-      artist: "বনি সেনগুপ্ত & রূপম ইসলাম • New Age",
-      era: "বর্তমান যুগ • ঢাক রক পপ"
+      artist: "বনি সেনগুপ্ত & রূপম ইসলাম • SVF Special",
+      era: "বর্তমান যুগ • ঢাক বিট"
     }
   ];
 
