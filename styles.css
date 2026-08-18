@@ -137,10 +137,38 @@ body {
   z-index: 10;
 }
 
-.nav-left {
+.nav-left-widget {
   display: flex;
   align-items: center;
-  gap: 10px;
+}
+
+.countdown-pill {
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  padding: 8px 18px;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.countdown-pill .time-display {
+  color: var(--gold-primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-pill .divider-dot {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+}
+
+.countdown-pill .countdown-display {
+  color: #FFFDF8;
+  font-weight: 600;
 }
 
 .nav-center {
