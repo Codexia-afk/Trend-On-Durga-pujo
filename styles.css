@@ -148,14 +148,14 @@ body {
   border: 1px solid rgba(255, 184, 0, 0.35);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   padding: 8px 18px;
-  gap: 10px;
+  gap: 6px;
   font-family: var(--font-sans);
   font-size: 0.88rem;
   font-weight: 600;
   color: #FFFFFF;
   display: inline-flex;
   align-items: center;
-  white-space: nowrap;
+  overflow: hidden;
 }
 
 .countdown-pill .time-display {
@@ -165,15 +165,10 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-.countdown-pill .divider-dot {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.8rem;
-}
-
-.countdown-pill .countdown-display {
-  color: #FFFDF8;
-  font-weight: 600;
-  white-space: nowrap;
+.countdown-pill:hover .hover-label {
+  max-width: 600px;
+  opacity: 1;
+  margin-left: 10px;
 }
 
 .nav-actions {
@@ -190,7 +185,7 @@ body {
   overflow: hidden;
   display: inline-block;
   vertical-align: middle;
-  transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin 0.25s ease;
+  transition: max-width 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin 0.3s ease;
 }
 
 .glass-pill:hover .hover-label,
@@ -200,6 +195,12 @@ body {
   max-width: 140px;
   opacity: 1;
   margin-left: 6px;
+}
+
+.countdown-pill:hover .hover-label {
+  max-width: 600px;
+  opacity: 1;
+  margin-left: 10px;
 }
 
 /* Top Right Brand & Hamburger Buttons */
