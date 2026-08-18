@@ -162,14 +162,10 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-.countdown-pill .divider-dot {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.8rem;
-}
-
-.countdown-pill .countdown-display {
-  color: #FFFDF8;
-  font-weight: 600;
+.countdown-pill:hover .hover-label {
+  max-width: 450px;
+  opacity: 1;
+  margin-left: 8px;
 }
 
 .nav-actions {

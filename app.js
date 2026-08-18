@@ -666,23 +666,17 @@
     function update() {
       const now = new Date();
 
-      // 1. Update Live Clock
+      // 1. Update Live Clock (Always English digits & AM/PM format in both interfaces)
       if (DOM.liveClockText) {
         const rawHours = now.getHours();
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
         const hr12 = String(rawHours % 12 || 12).padStart(2, '0');
-
-        if (state.currentLang === 'bn') {
-          const ampmBn = rawHours >= 12 ? 'অপরাহ্ন' : 'পূর্বাহ্ন';
-          DOM.liveClockText.textContent = `${toBengaliDigits(hr12)}:${toBengaliDigits(minutes)}:${toBengaliDigits(seconds)} ${ampmBn}`;
-        } else {
-          const ampmEn = rawHours >= 12 ? 'PM' : 'AM';
-          DOM.liveClockText.textContent = `${hr12}:${minutes}:${seconds} ${ampmEn}`;
-        }
+        const ampmEn = rawHours >= 12 ? 'PM' : 'AM';
+        DOM.liveClockText.textContent = `${hr12}:${minutes}:${seconds} ${ampmEn}`;
       }
 
-      // 2. Update Durga Puja 2026 Countdown
+      // 2. Update Durga Puja 2026 Countdown (Expands on Hover)
       if (DOM.pujoCountdownText) {
         const diff = targetDate - now;
         if (diff <= 0) {
@@ -698,9 +692,9 @@
         const strMinutes = String(minutes).padStart(2, '0');
 
         if (state.currentLang === 'bn') {
-          DOM.pujoCountdownText.textContent = `পূজো আসতে বাকি: ${toBengaliDigits(days)} দিন ${toBengaliDigits(strHours)} ঘণ্টা ${toBengaliDigits(strMinutes)} মি`;
+          DOM.pujoCountdownText.textContent = `🪔 পূজো আসতে বাকি: ${toBengaliDigits(days)} দিন ${toBengaliDigits(strHours)} ঘণ্টা ${toBengaliDigits(strMinutes)} মি`;
         } else {
-          DOM.pujoCountdownText.textContent = `Puja Countdown: ${days} Days ${strHours} Hours ${strMinutes} Mins`;
+          DOM.pujoCountdownText.textContent = `🪔 Puja Countdown: ${days} Days ${strHours} Hours ${strMinutes} Mins`;
         }
       }
     }
