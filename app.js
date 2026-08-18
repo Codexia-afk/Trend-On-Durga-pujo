@@ -830,6 +830,7 @@
       });
     }
 
+    renderPlaylist();
     showToast(`প্লে-লিস্ট পরিবর্তিত: ${tabKey === 'nostalgia' ? 'নস্টালজিয়া' : tabKey === 'mahalaya' ? 'মহিষাসুরমর্দিনী' : 'বর্তমান যুগ'}`, '📻');
   }
 
@@ -1222,7 +1223,12 @@
   // Modal Dialog Helpers
   function openModal(id) {
     const modal = document.getElementById(id);
-    if (modal) modal.classList.add('active');
+    if (modal) {
+      if (id === 'modal-playlist') {
+        renderPlaylist();
+      }
+      modal.classList.add('active');
+    }
   }
 
   function closeModal(id) {
