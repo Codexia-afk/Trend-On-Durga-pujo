@@ -46,30 +46,7 @@
 
     <!-- Top Floating Navbar -->
     <header class="top-nav">
-      
-      <!-- Left Side Language Toggle -->
-      <div class="nav-left">
-        <button class="glass-pill lang-btn" id="lang-toggle-btn" title="ভাষা পরিবর্তন (Language Toggle)">
-          <span class="globe-icon">🌐</span>
-          <span class="hover-label">EN | বাংলা</span>
-        </button>
-      </div>
-
-      <!-- Center Action Buttons (Dhak Sound & Festive Magic) -->
-      <div class="nav-center">
-        <!-- Dhak Sound Button with State Icon -->
-        <button class="glass-pill dhak-pill-btn" id="dhak-toggle-btn" title="ঢাকের আওয়াজ চালু/বন্ধ করুন">
-          <span class="dhak-state-icon" id="dhak-btn-state">▶</span>
-          <span class="dhak-pill-icon" id="dhak-btn-icon">🥁</span>
-          <span class="hover-label" id="dhak-btn-text" data-i18n="dhak_btn">ঢাকের আওয়াজ</span>
-        </button>
-
-        <!-- 30-Second Festive Magic Animation Button (Shiuli Flowers Rain) -->
-        <button class="glass-pill festive-magic-btn" id="festive-magic-btn" title="৩০ সেকেন্ডের শেউলি ফুল বৃষ্টি">
-          <span>🌸</span>
-          <span class="hover-label" id="magic-btn-text">উৎসবের আনন্দ</span>
-        </button>
-      </div>
+      <div></div> <!-- Spacer -->
 
       <!-- Right Side Action Buttons (Spotify, YouTube, 3-Line Song Drawer Menu) -->
       <div class="nav-actions">
@@ -102,17 +79,39 @@
 
     </header>
 
+    <!-- Vertically Centered Left Side Panel -->
+    <div class="floating-left-panel">
+      <!-- Language Toggle Button -->
+      <button class="glass-pill lang-btn" id="lang-toggle-btn" title="ভাষা পরিবর্তন (Language Toggle)">
+        <span class="globe-icon">🌐</span>
+        <span class="hover-label">EN | বাংলা</span>
+      </button>
+
+      <!-- Dhak Sound Button with State Icon -->
+      <button class="glass-pill dhak-pill-btn" id="dhak-toggle-btn" title="ঢাকের আওয়াজ চালু/বন্ধ করুন">
+        <span class="dhak-state-icon" id="dhak-btn-state">▶</span>
+        <span class="dhak-pill-icon" id="dhak-btn-icon">🥁</span>
+        <span class="hover-label" id="dhak-btn-text" data-i18n="dhak_btn">ঢাকের আওয়াজ</span>
+      </button>
+
+      <!-- 30-Second Festive Magic Animation Button (Shiuli Flowers Rain) -->
+      <button class="glass-pill festive-magic-btn" id="festive-magic-btn" title="৩০ সেকেন্ডের শেউলি ফুল বৃষ্টি">
+        <span>🌸</span>
+        <span class="hover-label" id="magic-btn-text">উৎসবের আনন্দ</span>
+      </button>
+
+      <!-- Refresh Picture Button (No Topic Showcase) -->
+      <button class="glass-pill side-refresh-btn" id="bg-refresh-btn" title="নতুন দৃশ্যপট দেখুন">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="refresh-icon-svg">
+          <path d="M21.5 2v6h-6M2.5 22v-6h6"></path>
+          <path d="M2 11.5a10 10 0 0 1 18.8-4.3L21.5 8M22 12.5a10 10 0 0 1-18.8 4.2L2.5 16"></path>
+        </svg>
+        <span class="hover-label">নতুন দৃশ্যপট</span>
+      </button>
+    </div>
+
     <!-- Magic Particle Container for Shiuli Flowers Rain -->
     <div id="magic-animation-container"></div>
-
-    <!-- Bottom Left Floating Refresh Picture Button (No Topic Showcase) -->
-    <button class="glass-pill floating-refresh-btn" id="bg-refresh-btn" title="নতুন দৃশ্যপট দেখুন">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="refresh-icon-svg">
-        <path d="M21.5 2v6h-6M2.5 22v-6h6"></path>
-        <path d="M2 11.5a10 10 0 0 1 18.8-4.3L21.5 8M22 12.5a10 10 0 0 1-18.8 4.2L2.5 16"></path>
-      </svg>
-      <span class="hover-label">নতুন দৃশ্যপট</span>
-    </button>
 
     <!-- Center Hero Section -->
     <main class="hero-section">
