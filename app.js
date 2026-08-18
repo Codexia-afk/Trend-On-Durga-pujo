@@ -258,6 +258,13 @@
   const playlistPresentEra = [
     // --- User Requested Featured Durga Puja Single Videos ---
     {
+      videoId: "JrcqCpFjE7Q",
+      startTime: 0,
+      title: "আজ বাজে মন মাঝে (Aaj Baaje Mon Maajhe)",
+      artist: "সোমচন্দা ভট্টাচার্য & বিক্রম ঘোষ • দুর্গা সহায় (Amara Muzik)",
+      era: "বর্তমান যুগ • দুর্গা সহায় স্পেশাল"
+    },
+    {
       videoId: "4h5DXcN6cd4",
       startTime: 0,
       title: "আমার দুগ্গা (Aamaar Dugga)",
