@@ -430,6 +430,8 @@
     btnPlayPause: document.getElementById('btn-play-pause'),
     btnPrevTrack: document.getElementById('btn-prev-track'),
     btnNextTrack: document.getElementById('btn-next-track'),
+    btnSkipBack: document.getElementById('btn-skip-back'),
+    btnSkipForward: document.getElementById('btn-skip-forward'),
     playerTrackTitle: document.getElementById('player-track-title'),
     playerTrackArtist: document.getElementById('player-track-artist'),
     playerEraTag: document.getElementById('player-era-tag'),
@@ -858,6 +860,23 @@
     loadTrackAndPlay(nextIdx);
   }
 
+  function skipBackward10() {
+    if (!ytPlayer || !state.isPlayerReady) return;
+    const cur = ytPlayer.getCurrentTime() || 0;
+    const newTime = Math.max(0, cur - 10);
+    ytPlayer.seekTo(newTime, true);
+    showToast('১০ সেকেন্ড পিছনে (10s Back)', '↺');
+  }
+
+  function skipForward10() {
+    if (!ytPlayer || !state.isPlayerReady) return;
+    const cur = ytPlayer.getCurrentTime() || 0;
+    const dur = ytPlayer.getDuration() || 0;
+    const newTime = Math.min(dur, cur + 10);
+    ytPlayer.seekTo(newTime, true);
+    showToast('১০ সেকেন্ড সামনে (10s Forward)', '↻');
+  }
+
   // Render Playlist Modal List
   function renderPlaylist() {
     DOM.playlistContainer.innerHTML = '';
@@ -1167,6 +1186,8 @@
     DOM.btnPlayPause.addEventListener('click', togglePlayPause);
     DOM.btnNextTrack.addEventListener('click', nextTrack);
     DOM.btnPrevTrack.addEventListener('click', prevTrack);
+    if (DOM.btnSkipBack) DOM.btnSkipBack.addEventListener('click', skipBackward10);
+    if (DOM.btnSkipForward) DOM.btnSkipForward.addEventListener('click', skipForward10);
 
     // Seek Slider
     DOM.seekSlider.addEventListener('input', (e) => {
