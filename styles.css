@@ -304,7 +304,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* Dhak Sound Pill Button */
+/* Dhak Sound Pill Button (Clean glass pill design matching Shiuli Phool button) */
 .dhak-pill-btn {
   background: rgba(0, 0, 0, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -315,38 +315,27 @@ body {
   overflow: hidden;
 }
 
-.dhak-pill-btn .dhak-state-icon {
-  font-size: 0.72rem;
-  width: 20px;
-  height: 20px;
-  background: rgba(255, 184, 0, 0.2);
-  border: 1px solid rgba(255, 184, 0, 0.4);
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold-primary);
-  margin-right: 2px;
-  transition: all 0.25s ease;
-}
-
 .dhak-pill-btn .dhak-pill-icon {
   font-size: 1.15rem;
   transition: transform 0.3s ease;
 }
 
 .dhak-pill-btn:hover {
-  background: linear-gradient(135deg, rgba(80, 30, 70, 0.9), rgba(40, 15, 55, 0.95));
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.25), rgba(220, 50, 0, 0.3));
   border-color: var(--gold-primary);
   box-shadow: 0 0 16px rgba(255, 184, 0, 0.4);
   color: #FFF;
 }
 
 .dhak-pill-btn.active {
-  background: linear-gradient(135deg, rgba(255, 184, 0, 0.3), rgba(220, 50, 0, 0.4));
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.35), rgba(220, 50, 0, 0.45));
   border-color: var(--gold-primary);
   color: #FFFFFF;
   box-shadow: 0 0 20px var(--gold-glow);
+}
+
+.dhak-pill-btn.active .dhak-pill-icon {
+  animation: drum-shake 0.4s infinite alternate;
 }
 
 .dhak-pill-btn.active .dhak-state-icon {
