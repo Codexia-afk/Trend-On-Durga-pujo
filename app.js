@@ -653,6 +653,62 @@
     }
   }
 
+  // Helper to convert any number/string to Bengali digits (০১২৩৪৫৬৭৮৯)
+  function toBengaliDigits(str) {
+    const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+    return String(str).replace(/\d/g, (d) => bnDigits[d]);
+  }
+
+  // Live Clock & Durga Puja 2026 Countdown Timer (Target: October 17, 2026)
+  function startLiveClockAndPujaCounter() {
+    const targetDate = new Date('2026-10-17T00:00:00');
+
+    function update() {
+      const now = new Date();
+
+      // 1. Update Live Clock
+      if (DOM.liveClockText) {
+        const rawHours = now.getHours();
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const hr12 = String(rawHours % 12 || 12).padStart(2, '0');
+
+        if (state.currentLang === 'bn') {
+          const ampmBn = rawHours >= 12 ? 'অপরাহ্ন' : 'পূর্বাহ্ন';
+          DOM.liveClockText.textContent = `${toBengaliDigits(hr12)}:${toBengaliDigits(minutes)}:${toBengaliDigits(seconds)} ${ampmBn}`;
+        } else {
+          const ampmEn = rawHours >= 12 ? 'PM' : 'AM';
+          DOM.liveClockText.textContent = `${hr12}:${minutes}:${seconds} ${ampmEn}`;
+        }
+      }
+
+      // 2. Update Durga Puja 2026 Countdown
+      if (DOM.pujoCountdownText) {
+        const diff = targetDate - now;
+        if (diff <= 0) {
+          DOM.pujoCountdownText.textContent = state.currentLang === 'bn' ? '🎉 পূজোর শুভ সূচনা!' : '🎉 Durga Puja Started!';
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+        const strHours = String(hours).padStart(2, '0');
+        const strMinutes = String(minutes).padStart(2, '0');
+
+        if (state.currentLang === 'bn') {
+          DOM.pujoCountdownText.textContent = `পূজো আসতে বাকি: ${toBengaliDigits(days)} দিন ${toBengaliDigits(strHours)} ঘণ্টা ${toBengaliDigits(strMinutes)} মি`;
+        } else {
+          DOM.pujoCountdownText.textContent = `Puja Countdown: ${days} Days ${strHours} Hours ${strMinutes} Mins`;
+        }
+      }
+    }
+
+    update();
+    setInterval(update, 1000);
+  }
+
   // Handle YouTube Error (Skip Broken / Restricted Tracks Automatically)
   function onPlayerError(event) {
     console.warn("YouTube Player Error code:", event.data);
