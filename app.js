@@ -370,6 +370,7 @@
     currentLang: 'bn',
     currentTrackIndex: 0,
     isPlaying: false,
+    userPaused: false,
     virtualChandaCount: 1248,
     isPlayerReady: false,
     seekPollInterval: null
@@ -588,7 +589,8 @@
       },
       events: {
         'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
+        'onStateChange': onPlayerStateChange,
+        'onError': onPlayerError
       }
     });
 
@@ -614,22 +616,50 @@
   function onPlayerStateChange(event) {
     if (event.data === YT.PlayerState.PLAYING) {
       state.isPlaying = true;
+      state.userPaused = false;
       DOM.btnPlayPause.textContent = '⏸';
       DOM.playerDock.classList.add('playing');
-    } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.BUFFERING) {
-      if (event.data === YT.PlayerState.PAUSED) {
+    } else if (event.data === YT.PlayerState.PAUSED) {
+      // Auto-resume if pause was triggered automatically (not by explicit user click)
+      if (!state.userPaused && state.isPlaying) {
+        setTimeout(() => {
+          if (ytPlayer && typeof ytPlayer.playVideo === 'function' && !state.userPaused) {
+            ytPlayer.playVideo();
+          }
+        }, 250);
+      } else {
         state.isPlaying = false;
         DOM.btnPlayPause.textContent = '▶';
         DOM.playerDock.classList.remove('playing');
       }
     } else if (event.data === YT.PlayerState.ENDED) {
       handleTrackEnd();
+    } else if (event.data === YT.PlayerState.CUED) {
+      if (state.isPlaying && !state.userPaused) {
+        setTimeout(() => {
+          if (ytPlayer && typeof ytPlayer.playVideo === 'function') {
+            ytPlayer.playVideo();
+          }
+        }, 200);
+      }
     }
   }
 
-  // Handle Track End (Autoplay & Tab Specific Rules)
+  // Handle YouTube Error (Skip Broken / Restricted Tracks Automatically)
+  function onPlayerError(event) {
+    console.warn("YouTube Player Error code:", event.data);
+    if (!state.userPaused) {
+      showToast('পরবর্তী গান চালু করা হচ্ছে...', '⏩');
+      setTimeout(() => {
+        nextTrack();
+      }, 500);
+    }
+  }
+
+  // Handle Track End (Continuous Endless Autoplay Across All Playlists)
   function handleTrackEnd() {
     const playlist = getActivePlaylist();
+    state.userPaused = false;
     
     if (state.activeTab === 'mahalaya') {
       // Tab 2 (Mahalayas): Linear narration, loop = false
@@ -639,36 +669,49 @@
       } else {
         // Last chapter reached: stop playback
         state.isPlaying = false;
+        state.userPaused = true;
         DOM.btnPlayPause.textContent = '▶';
         DOM.playerDock.classList.remove('playing');
         showToast('মহিষাসুরমর্দিনী সমাপ্ত। শুভ মহালয়া!', '🪔');
       }
     } else {
-      // Tabs 1 & 3: Loops forever, auto-wraps to 0
+      // Tabs 1 & 3: Loops endlessly, auto-wraps to 0
       state.currentTrackIndex = (state.currentTrackIndex + 1) % playlist.length;
       loadTrackAndPlay(state.currentTrackIndex);
     }
   }
 
-  // Load and play track
+  // Load and play track with forced autoplay trigger
   function loadTrackAndPlay(index) {
     const playlist = getActivePlaylist();
     if (index < 0 || index >= playlist.length) return;
 
     state.currentTrackIndex = index;
+    state.userPaused = false;
+    state.isPlaying = true;
     const track = playlist[index];
 
     updateTrackDisplay(index);
 
     if (ytPlayer && state.isPlayerReady) {
-      ytPlayer.loadVideoById({
-        videoId: track.videoId,
-        startSeconds: track.startTime || 0
-      });
-      state.isPlaying = true;
-      DOM.btnPlayPause.textContent = '⏸';
-      DOM.playerDock.classList.add('playing');
-      showToast(`এখন বাজছে: ${track.title}`, '🎶');
+      try {
+        ytPlayer.loadVideoById({
+          videoId: track.videoId,
+          startSeconds: track.startTime || 0
+        });
+        DOM.btnPlayPause.textContent = '⏸';
+        DOM.playerDock.classList.add('playing');
+        showToast(`এখন বাজছে: ${track.title}`, '🎶');
+
+        // Backup force-play to overcome browser iframe policies
+        setTimeout(() => {
+          if (ytPlayer && typeof ytPlayer.playVideo === 'function' && !state.userPaused) {
+            ytPlayer.playVideo();
+          }
+        }, 200);
+      } catch (err) {
+        console.error("Error loading video track:", err);
+      }
     }
   }
 
@@ -711,6 +754,12 @@
         DOM.totalDuration.textContent = formatTime(dur);
         DOM.seekSlider.value = (cur / dur) * 100;
 
+        // Auto-advance if video reaches end (dur > 5 and cur >= dur - 0.8) to prevent YouTube end-stall
+        if (dur > 5 && cur >= dur - 0.8 && !state.userPaused) {
+          handleTrackEnd();
+          return;
+        }
+
         // Auto-match displayed song title with playback timestamp
         const playlist = getActivePlaylist();
         const currentTrack = playlist[state.currentTrackIndex];
@@ -747,6 +796,7 @@
       ytPlayer.pauseVideo();
     }
     state.isPlaying = false;
+    state.userPaused = false;
     DOM.btnPlayPause.textContent = '▶';
     DOM.playerDock.classList.remove('playing');
 
@@ -782,10 +832,15 @@
   function togglePlayPause() {
     if (!ytPlayer || !state.isPlayerReady) return;
     if (state.isPlaying) {
+      state.userPaused = true;
+      state.isPlaying = false;
       ytPlayer.pauseVideo();
+      DOM.btnPlayPause.textContent = '▶';
+      DOM.playerDock.classList.remove('playing');
     } else {
-      ytPlayer.playVideo();
+      state.userPaused = false;
       state.isPlaying = true;
+      ytPlayer.playVideo();
       DOM.btnPlayPause.textContent = '⏸';
       DOM.playerDock.classList.add('playing');
     }
