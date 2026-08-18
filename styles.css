@@ -740,17 +740,37 @@ input:checked + .slider:before {
 }
 
 .btn-skip-10 {
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   font-weight: 700;
   font-family: var(--font-sans);
-  color: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   background: rgba(255, 255, 255, 0.08);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 0;
+}
+
+.btn-skip-10 svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.skip-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .btn-skip-10:hover {
   background: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.5);
+  color: #FFFFFF;
   transform: scale(1.08);
 }
 
