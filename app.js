@@ -997,51 +997,6 @@
     DOM.themeBtnText.textContent = `${state.currentLang === 'bn' ? 'দৃশ্যাবলী' : 'Theme'}: ${name}`;
   }
 
-  // Live Clock & Durga Puja 2026 Countdown Timer (Target: October 17, 2026)
-  function startLiveClockAndPujaCounter() {
-    const targetDate = new Date('2026-10-17T00:00:00');
-
-    function update() {
-      const now = new Date();
-
-      // 1. Update Live Clock
-      if (DOM.liveClockText) {
-        let hours = now.getHours();
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-        const ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12;
-        const formattedHours = String(hours).padStart(2, '0');
-        DOM.liveClockText.textContent = `${formattedHours}:${minutes}:${seconds} ${ampm}`;
-      }
-
-      // 2. Update Durga Puja 2026 Countdown
-      if (DOM.pujoCountdownText) {
-        const diff = targetDate - now;
-        if (diff <= 0) {
-          DOM.pujoCountdownText.textContent = state.currentLang === 'bn' ? '🎉 পূজোর শুভ সূচনা!' : '🎉 Durga Puja Started!';
-          return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-        if (state.currentLang === 'bn') {
-          const bnDays = days.toLocaleString('bn-BD');
-          const bnHours = String(hours).padStart(2, '0').replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]);
-          const bnMinutes = String(minutes).padStart(2, '0').replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]);
-          DOM.pujoCountdownText.textContent = `পূজো আসতে বাকি: ${bnDays} দিন ${bnHours} ঘণ্টা ${bnMinutes} মি`;
-        } else {
-          DOM.pujoCountdownText.textContent = `Puja in: ${days}d ${hours}h ${minutes}m`;
-        }
-      }
-    }
-
-    update();
-    setInterval(update, 1000);
-  }
-
   // Live Counter Simulation
   function startOnlineCounterSimulation() {
     setInterval(() => {
