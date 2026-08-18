@@ -1243,46 +1243,17 @@ input:checked + .slider:before {
   to { transform: translateX(0); opacity: 1; }
 }
 
-/* Footer Info & Copyright Mark */
+/* Footer Info */
 .footer-text {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  margin-top: 24px;
-  margin-bottom: 120px;
-  position: relative;
-  z-index: 10;
+  margin-top: 20px;
 }
 
-.copyright-mark {
-  display: inline-block;
-  background: rgba(18, 9, 24, 0.65);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 184, 0, 0.35);
-  border-radius: var(--radius-pill);
-  padding: 8px 24px;
-  color: var(--text-muted);
-  font-family: var(--font-sabeki);
-  letter-spacing: 0.4px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), 0 0 16px rgba(255, 184, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.copyright-mark:hover {
-  border-color: var(--gold-primary);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55), 0 0 22px var(--gold-glow);
-  transform: translateY(-2px);
-}
-
-.copyright-mark strong {
-  color: var(--gold-primary);
-  font-weight: 700;
-}
-
-.gold-sparkle {
-  color: var(--gold-primary);
-  font-weight: bold;
+.footer-text a {
+  color: var(--text-gold);
+  text-decoration: none;
 }
 
 /* Custom Scrollbars */

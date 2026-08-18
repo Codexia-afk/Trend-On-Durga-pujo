@@ -211,13 +211,6 @@
   // TAB 2: "মহিষাসুরমর্দিনী" (Mahishasura Mardini - Iconic Mahalaya Dawn Broadcast & Stotram)
   const playlistMahalaya = [
     {
-      videoId: "BnlTaW3n2WQ",
-      startTime: 0,
-      title: "আগমনীর গান (Agomoni Gaan 2024 Mahalaya Special)",
-      artist: "কৃষ্ণ রাধে • দেবীবন্ধনা আগমনী গীতি",
-      era: "মহালয়া • বিশেষ আগমনী গান"
-    },
-    {
       videoId: "442ewPgXHQ0",
       startTime: 0,
       title: "অয়িগিরি নন্দিনি — মহিষাসুরমর্দিনী স্তোত্রম (Aigiri Nandini Stotram)",
@@ -254,36 +247,22 @@
     }
   ];
 
-  // TAB 3: "বর্তমান যুগ" (Present Era - User Selected & Trending Pujo Hits)
+  // TAB 3: "বর্তমান যুগ" (Present Era - Single Track Official Videos & Special Albums)
   const playlistPresentEra = [
-    // --- User Requested Featured Durga Puja Single Videos ---
+    // --- Official Single Tracks from YouTube Playlist (PLEWEj5NdvUqJeYfSDC4jJQXGgw92vNb6k) ---
     {
-      videoId: "JrcqCpFjE7Q",
+      videoId: "E2zfQEo7Q_M",
       startTime: 0,
-      title: "আজ বাজে মন মাঝে (Aaj Baaje Mon Maajhe)",
-      artist: "সোমচন্দা ভট্টাচার্য & বিক্রম ঘোষ • দুর্গা সহায় (Amara Muzik)",
-      era: "বর্তমান যুগ • দুর্গা সহায় স্পেশাল"
+      title: "এবার যেন অন্য রকম পুজো (Ebar Jeno Onno Rokom Pujo)",
+      artist: "দেব & মিমি চক্রবর্তী • রাজ চক্রবর্তী • SVF",
+      era: "বর্তমান যুগ • বিশেষ পূজা সং"
     },
     {
-      videoId: "4h5DXcN6cd4",
+      videoId: "OjopH641Q3Q",
       startTime: 0,
-      title: "আমার দুগ্গা (Aamaar Dugga)",
-      artist: "মোনালী ঠাকুর • Official Music Video",
-      era: "বর্তমান যুগ • মোনালী ঠাকুর"
-    },
-    {
-      videoId: "4zyCkmAS1Oo",
-      startTime: 0,
-      title: "আইলো উমা বাড়িতে (Ailo Uma Barite)",
-      artist: "মনামী ঘোষ • শারদীয় হিট সং",
-      era: "বর্তমান যুগ • ড্যান্স স্পেশাল"
-    },
-    {
-      videoId: "XyatKcoBrPw",
-      startTime: 0,
-      title: "বলো দুগ্গা এলো (Bolo Dugga Elo - Taakdoom)",
-      artist: "সুনিধি চৌহান & কৌশিক-গুড্ডু • ইন্দ্রনীল • SVF",
-      era: "বর্তমান যুগ • শারদ ধামাকা"
+      title: "আসছে মা দুর্গা সে (Ashey Maa Durga Shey)",
+      artist: "মিমি, শুভশ্রী & নুসরত • ক্যাপ্টেন স্টিল শারদীয়",
+      era: "বর্তমান যুগ • রাজবাড়ি ফিচার"
     },
     {
       videoId: "id5_3dKvEBg",
@@ -293,25 +272,11 @@
       era: "বর্তমান যুগ • ঢাক ও কাঁসর স্পেশাল"
     },
     {
-      videoId: "sPuZ0Q3KDWo",
+      videoId: "yzEbF55ywtM",
       startTime: 0,
-      title: "দুগ্গা মা (Dugga Ma - Bolo Dugga Maiki)",
-      artist: "অরিজিৎ সিং • অঙ্কুশ ও নুসরত • SVF Music",
-      era: "বর্তমান যুগ • অরিজিৎ সিং হিট"
-    },
-    {
-      videoId: "E2zfQEo7Q_M",
-      startTime: 0,
-      title: "এবার যেন অন্য রকম পুজো (Ebar Jeno Onno Rokom Pujo)",
-      artist: "দেব & মিমি চক্রবর্তী • রাজ চক্রবর্তী • SVF",
-      era: "বর্তমান যুগ • বিশেষ পূজা সং"
-    },
-    {
-      videoId: "3E_qefwPA0E",
-      startTime: 0,
-      title: "জয় জয় দুর্গা মা (Joy Joy Durga Maa - The Pujo Song)",
-      artist: "সৌরভ গাঙ্গুলী, জিৎ গাঙ্গুলী, মিমি & নুসরত",
-      era: "বর্তমান যুগ • মহারাজা স্পেশাল"
+      title: "বাজলো তোমার আলোর বেণু (Bajlo Tomar Alor Benu)",
+      artist: "দেবলীনা চ্যাটার্জি • SM Studio Mahalaya",
+      era: "বর্তমান যুগ • মহালয়া আগমনী"
     },
     {
       videoId: "2U416kTo0as",
@@ -321,11 +286,18 @@
       era: "বর্তমান যুগ • দেব ও শুভশ্রী হিট"
     },
     {
-      videoId: "hnkfDCbULxk",
+      videoId: "sPuZ0Q3KDWo",
       startTime: 0,
-      title: "উমা আসে নতুন সাজে (Uma Ashe Notun Saje)",
-      artist: "অঙ্কিতা ভট্টাচার্য • Times Music Bangla",
-      era: "বর্তমান যুগ • নতুন প্রকাশ"
+      title: "দুগ্গা মা (Dugga Ma - Bolo Dugga Maiki)",
+      artist: "অরিজিৎ সিং • অঙ্কুশ ও নুসরত • SVF Music",
+      era: "বর্তমান যুগ • অরিজিৎ সিং হিট"
+    },
+    {
+      videoId: "3E_qefwPA0E",
+      startTime: 0,
+      title: "জয় জয় দুর্গা মা (Joy Joy Durga Maa - The Pujo Song)",
+      artist: "সৌরভ গাঙ্গুলী, জিৎ গাঙ্গুলী, মিমি & নুসরত",
+      era: "বর্তমান যুগ • মহারাজা স্পেশাল"
     },
     {
       videoId: "hbXuXt7gkFY",
@@ -533,7 +505,7 @@
       dhak_btn: "ঢাকের আওয়াজ",
       share_title: "শেয়ার করে জাদু দেখো! ✨", share_btn: "5 Groups-এ Share করুন",
       scroll_hint: "গান নির্বাচন করুন", btn_playlist: "গান নির্বাচন",
-      footer_text: "পরিকল্পনা ও নির্মাণে: শ্রীঞ্জয় প্রামাণিক (Srinjoy Pramanick)",
+      footer_text: "স্মৃতির শহর কলকাতা • তৈরি করা হয়েছে গভীর ভালবাসায়",
       about_title: "আমাদের কথা — পূজার গানের ইতিহাস", faq_title: "সাধারণ প্রশ্ন ও উত্তর",
       support_title: "আর্কাইভকে ভালোবাসুন", playlist_title: "পূজার গানের প্লে-লিস্ট"
     },
@@ -545,7 +517,7 @@
       dhak_btn: "Dhak Sound",
       share_title: "Share for Magic! ✨", share_btn: "Share in 5 Groups",
       scroll_hint: "SELECT TRACKS", btn_playlist: "Playlist",
-      footer_text: "Created with ❤️ by Srinjoy Pramanick",
+      footer_text: "City of Joy Kolkata • Crafted with love",
       about_title: "About — History of Puja Anthems", faq_title: "Frequently Asked Questions",
       support_title: "Support the Archive", playlist_title: "Durga Puja Tracklist"
     }

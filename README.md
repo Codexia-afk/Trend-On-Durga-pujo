@@ -8,8 +8,6 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![YouTube API](https://img.shields.io/badge/YouTube_API-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
-![Author](https://img.shields.io/badge/Author-Srinjoy_Pramanick-gold?style=for-the-badge&logo=github&logoColor=black)
-![License](https://img.shields.io/badge/Copyright-©_2026_Srinjoy_Pramanick-ff69b4?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active_&_Maintained-brightgreen?style=for-the-badge)
 
 <p align="center">
@@ -155,7 +153,7 @@ This project is created with deep love and reverence for **Bengal's greatest cul
 
 <div align="center">
 
-**© 2026 Srinjoy Pramanick. All Rights Reserved.**  
-*পরিকল্পনা ও নির্মাণে: শ্রীঞ্জয় প্রামাণিক (Srinjoy Pramanick) • City of Joy Kolkata* 🪔
+**স্মৃতির শহর কলকাতা • তৈরি করা হয়েছে গভীর ভালোবাসায় 🪔**  
+*City of Joy Kolkata • Crafted with Love & Reverence*
 
 </div>
