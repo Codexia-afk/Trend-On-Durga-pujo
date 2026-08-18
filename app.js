@@ -1073,10 +1073,8 @@
     } catch (e) {}
   }
 
-  // 30-Second Shiuli Rain & Wind-Swaying Kaash Grass Field Engine
+  // 30-Second Shiuli Flower Rain Animation Engine
   const SHIULI_SVG = `<svg width="24" height="24" viewBox="0 0 24 24"><g transform="translate(12,12)"><circle r="2.8" fill="#FF6B00"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(72)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(144)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(216)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(288)"/></g></svg>`;
-
-  const KAASH_STALK_SVG = `<svg width="50" height="250" viewBox="0 0 50 250"><path d="M25 250 C 25 160, 27 80, 23 0" stroke="#526425" stroke-width="2.5" fill="none"/><path d="M25 250 C 14 190, 2 150, 6 120" stroke="#687C31" stroke-width="1.8" fill="none"/><path d="M25 250 C 36 185, 48 145, 44 118" stroke="#687C31" stroke-width="1.8" fill="none"/><path d="M23 0 L 12 28 L 26 24 L 8 58 L 28 50 L 6 92 L 30 82 L 10 130 L 28 118 L 14 165 Z" fill="#FFFDF8"/><path d="M23 0 L 34 26 L 20 24 L 38 54 L 18 50 L 40 88 L 16 82 L 36 124 L 18 118 L 32 160 Z" fill="#F4ECE0"/><path d="M23 8 L 16 38 L 25 34 L 12 70 L 26 62 L 14 105 L 24 95 Z" fill="#E8DBC4" opacity="0.85"/></svg>`;
 
   let magicSpawners = [];
   let magicCountdownTimer = null;
@@ -1093,10 +1091,6 @@
     state.isMagicAnimating = true;
     if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.classList.add('active');
 
-    // Grow Kaash Grass Field at Bottom
-    renderKaashField();
-    if (DOM.kaashFieldContainer) DOM.kaashFieldContainer.classList.add('active');
-
     let secondsLeft = 30;
     if (DOM.magicBtnText) DOM.magicBtnText.textContent = `উৎসব (${secondsLeft}s)`;
 
@@ -1111,7 +1105,7 @@
     // Spawn Shiuli flowers raining down from top
     const shiuliInterval = setInterval(() => {
       spawnShiuliFlower();
-    }, 240);
+    }, 220);
 
     magicSpawners.push(shiuliInterval);
   }
@@ -1120,8 +1114,6 @@
     state.isMagicAnimating = false;
     if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.classList.remove('active');
     if (DOM.magicBtnText) DOM.magicBtnText.textContent = 'উৎসবের আনন্দ';
-
-    if (DOM.kaashFieldContainer) DOM.kaashFieldContainer.classList.remove('active');
 
     if (magicCountdownTimer) {
       clearInterval(magicCountdownTimer);
@@ -1135,28 +1127,6 @@
       setTimeout(() => {
         if (!state.isMagicAnimating) DOM.magicContainer.innerHTML = '';
       }, 2500);
-    }
-  }
-
-  function renderKaashField() {
-    if (!DOM.kaashFieldContainer) return;
-    DOM.kaashFieldContainer.innerHTML = '';
-
-    const stalkCount = Math.floor(window.innerWidth / 35) + 6;
-    for (let i = 0; i < stalkCount; i++) {
-      const stalk = document.createElement('div');
-      stalk.className = 'kaash-stalk';
-      stalk.innerHTML = KAASH_STALK_SVG;
-
-      const scale = 0.75 + Math.random() * 0.55;
-      const duration = 2.2 + Math.random() * 2.6;
-      const delay = Math.random() * -3.0;
-
-      stalk.style.animationDuration = `${duration}s`;
-      stalk.style.animationDelay = `${delay}s`;
-      stalk.style.transform = `scale(${scale})`;
-
-      DOM.kaashFieldContainer.appendChild(stalk);
     }
   }
 
