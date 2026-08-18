@@ -379,6 +379,7 @@
   // Theme Definitions
   const themes = [
     { id: 'bg-theme-shasthi', bnName: 'ষষ্ঠীর সকাল', enName: 'Sosthi r Sokal' },
+    { id: 'bg-theme-mahalaya', bnName: 'মহালয়ার সকালের তর্পণ', enName: 'Mahalaya r Sokal er Torpon' },
     { id: 'bg-theme-evening', bnName: 'সন্ধ্যা আরতি', enName: 'Evening Aarti' },
     { id: 'bg-theme-dawn', bnName: 'ভোরের মহাষ্টমী', enName: 'Maha Ashtami Dawn' },
     { id: 'bg-theme-rainy', bnName: 'বৃষ্টির সন্ধিপূজা', enName: 'Rainy Sandhi Puja' },
