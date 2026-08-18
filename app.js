@@ -373,7 +373,8 @@
     userPaused: false,
     virtualChandaCount: 1248,
     isPlayerReady: false,
-    seekPollInterval: null
+    seekPollInterval: null,
+    isMagicAnimating: false
   };
 
   // Theme Definitions
@@ -428,6 +429,9 @@
     dhakBtnState: document.getElementById('dhak-btn-state'),
     dhakBtnIcon: document.getElementById('dhak-btn-icon'),
     dhakBtnText: document.getElementById('dhak-btn-text'),
+    festiveMagicBtn: document.getElementById('festive-magic-btn'),
+    magicContainer: document.getElementById('magic-animation-container'),
+    magicBtnText: document.getElementById('magic-btn-text'),
     shareCountBadge: document.getElementById('share-count-badge'),
     shareProgressBar: document.getElementById('share-progress-bar'),
     btnShareWhatsapp: document.getElementById('btn-share-whatsapp'),
@@ -1068,6 +1072,110 @@
     } catch (e) {}
   }
 
+  // 30-Second Shiuli Rain & Kaash Phool Rising Animation Engine
+  const SHIULI_SVG = `<svg width="24" height="24" viewBox="0 0 24 24"><g transform="translate(12,12)"><circle r="2.8" fill="#FF6B00"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(72)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(144)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(216)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(288)"/></g></svg>`;
+
+  const KAASH_SVG = `<svg width="34" height="80" viewBox="0 0 34 80"><path d="M17 80 C 17 45, 19 22, 17 0" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" fill="none"/><path d="M17 5 Q 7 16 0 28 Q 14 22 17 10" fill="rgba(255,255,255,0.85)"/><path d="M17 10 Q 27 22 34 32 Q 20 25 17 15" fill="rgba(255,255,255,0.85)"/><path d="M17 22 Q 5 36 0 48 Q 15 40 17 28" fill="rgba(255,255,255,0.8)"/><path d="M17 28 Q 29 42 34 52 Q 20 44 17 34" fill="rgba(255,255,255,0.8)"/><path d="M17 38 Q 7 52 2 62 Q 15 54 17 44" fill="rgba(255,255,255,0.75)"/></svg>`;
+
+  let magicSpawners = [];
+  let magicCountdownTimer = null;
+
+  function toggleFestiveMagicAnimation() {
+    if (state.isMagicAnimating) {
+      stopFestiveMagicAnimation();
+    } else {
+      startFestiveMagicAnimation();
+    }
+  }
+
+  function startFestiveMagicAnimation() {
+    state.isMagicAnimating = true;
+    if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.classList.add('active');
+
+    let secondsLeft = 30;
+    if (DOM.magicBtnText) DOM.magicBtnText.textContent = `উৎসব (${secondsLeft}s)`;
+
+    magicCountdownTimer = setInterval(() => {
+      secondsLeft--;
+      if (DOM.magicBtnText) DOM.magicBtnText.textContent = `উৎসব (${secondsLeft}s)`;
+      if (secondsLeft <= 0) {
+        stopFestiveMagicAnimation();
+      }
+    }, 1000);
+
+    const shiuliInterval = setInterval(() => {
+      spawnShiuliFlower();
+    }, 260);
+
+    const kaashInterval = setInterval(() => {
+      spawnKaashGrass();
+    }, 380);
+
+    magicSpawners.push(shiuliInterval, kaashInterval);
+  }
+
+  function stopFestiveMagicAnimation() {
+    state.isMagicAnimating = false;
+    if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.classList.remove('active');
+    if (DOM.magicBtnText) DOM.magicBtnText.textContent = 'উৎসবের আনন্দ';
+
+    if (magicCountdownTimer) {
+      clearInterval(magicCountdownTimer);
+      magicCountdownTimer = null;
+    }
+
+    magicSpawners.forEach(id => clearInterval(id));
+    magicSpawners = [];
+
+    if (DOM.magicContainer) {
+      setTimeout(() => {
+        if (!state.isMagicAnimating) DOM.magicContainer.innerHTML = '';
+      }, 2500);
+    }
+  }
+
+  function spawnShiuliFlower() {
+    if (!DOM.magicContainer || !state.isMagicAnimating) return;
+    const el = document.createElement('div');
+    el.className = 'shiuli-particle';
+    el.innerHTML = SHIULI_SVG;
+
+    const posX = Math.random() * 95;
+    const duration = 3.5 + Math.random() * 3.5;
+    const scale = 0.7 + Math.random() * 0.7;
+
+    el.style.left = `${posX}vw`;
+    el.style.animationDuration = `${duration}s`;
+    el.style.transform = `scale(${scale})`;
+
+    DOM.magicContainer.appendChild(el);
+
+    setTimeout(() => {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    }, duration * 1000);
+  }
+
+  function spawnKaashGrass() {
+    if (!DOM.magicContainer || !state.isMagicAnimating) return;
+    const el = document.createElement('div');
+    el.className = 'kaash-particle';
+    el.innerHTML = KAASH_SVG;
+
+    const posX = Math.random() * 95;
+    const duration = 4.0 + Math.random() * 4.0;
+    const scale = 0.6 + Math.random() * 0.8;
+
+    el.style.left = `${posX}vw`;
+    el.style.animationDuration = `${duration}s`;
+    el.style.transform = `scale(${scale})`;
+
+    DOM.magicContainer.appendChild(el);
+
+    setTimeout(() => {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    }, duration * 1000);
+  }
+
   // WhatsApp Share Functionality
   function restoreShareCount() {
     const saved = localStorage.getItem('puja_share_count');
@@ -1153,8 +1261,9 @@
 
   // Event Listeners Binding
   function setupEventListeners() {
-    // Theme Switcher
+    // Theme Switcher & Festive Magic Animation Buttons
     DOM.themeSwitchBtn.addEventListener('click', switchTheme);
+    if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.addEventListener('click', toggleFestiveMagicAnimation);
     DOM.langToggleBtn.addEventListener('click', toggleLanguage);
 
     // Tab Buttons
