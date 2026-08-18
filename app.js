@@ -211,6 +211,13 @@
   // TAB 2: "মহিষাসুরমর্দিনী" (Mahishasura Mardini - Iconic Mahalaya Dawn Broadcast & Stotram)
   const playlistMahalaya = [
     {
+      videoId: "BnlTaW3n2WQ",
+      startTime: 0,
+      title: "আগমনীর গান (Agomoni Gaan 2024 Mahalaya Special)",
+      artist: "কৃষ্ণ রাধে • দেবীবন্ধনা আগমনী গীতি",
+      era: "মহালয়া • বিশেষ আগমনী গান"
+    },
+    {
       videoId: "442ewPgXHQ0",
       startTime: 0,
       title: "অয়িগিরি নন্দিনি — মহিষাসুরমর্দিনী স্তোত্রম (Aigiri Nandini Stotram)",
