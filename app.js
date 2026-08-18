@@ -505,7 +505,7 @@
       dhak_btn: "ঢাকের আওয়াজ",
       share_title: "শেয়ার করে জাদু দেখো! ✨", share_btn: "5 Groups-এ Share করুন",
       scroll_hint: "গান নির্বাচন করুন", btn_playlist: "গান নির্বাচন",
-      footer_text: "স্মৃতির শহর কলকাতা • তৈরি করা হয়েছে গভীর ভালবাসায়",
+      footer_text: "পরিকল্পনা ও নির্মাণে: শ্রীঞ্জয় প্রামাণিক (Srinjoy Pramanick)",
       about_title: "আমাদের কথা — পূজার গানের ইতিহাস", faq_title: "সাধারণ প্রশ্ন ও উত্তর",
       support_title: "আর্কাইভকে ভালোবাসুন", playlist_title: "পূজার গানের প্লে-লিস্ট"
     },
@@ -517,7 +517,7 @@
       dhak_btn: "Dhak Sound",
       share_title: "Share for Magic! ✨", share_btn: "Share in 5 Groups",
       scroll_hint: "SELECT TRACKS", btn_playlist: "Playlist",
-      footer_text: "City of Joy Kolkata • Crafted with love",
+      footer_text: "Created with ❤️ by Srinjoy Pramanick",
       about_title: "About — History of Puja Anthems", faq_title: "Frequently Asked Questions",
       support_title: "Support the Archive", playlist_title: "Durga Puja Tracklist"
     }
