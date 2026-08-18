@@ -553,18 +553,9 @@
     return playlistNostalgia;
   }
 
-  // Toast Notification
+  // Toast Notification (Disabled per user request to remove option tap pop-ups)
   function showToast(message, icon = '✨') {
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.innerHTML = `<span>${icon}</span> <span>${message}</span>`;
-    DOM.toastContainer.appendChild(toast);
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateY(-10px)';
-      toast.style.transition = 'all 0.3s ease';
-      setTimeout(() => toast.remove(), 300);
-    }, 3200);
+    return;
   }
 
   // Init Application
