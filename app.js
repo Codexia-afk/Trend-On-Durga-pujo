@@ -247,22 +247,29 @@
     }
   ];
 
-  // TAB 3: "বর্তমান যুগ" (Present Era - Single Track Official Videos & Special Albums)
+  // TAB 3: "বর্তমান যুগ" (Present Era - User Selected & Trending Pujo Hits)
   const playlistPresentEra = [
-    // --- Official Single Tracks from YouTube Playlist (PLEWEj5NdvUqJeYfSDC4jJQXGgw92vNb6k) ---
+    // --- User Requested Featured Durga Puja Single Videos ---
     {
-      videoId: "E2zfQEo7Q_M",
+      videoId: "4h5DXcN6cd4",
       startTime: 0,
-      title: "এবার যেন অন্য রকম পুজো (Ebar Jeno Onno Rokom Pujo)",
-      artist: "দেব & মিমি চক্রবর্তী • রাজ চক্রবর্তী • SVF",
-      era: "বর্তমান যুগ • বিশেষ পূজা সং"
+      title: "আমার দুগ্গা (Aamaar Dugga)",
+      artist: "মোনালী ঠাকুর • Official Music Video",
+      era: "বর্তমান যুগ • মোনালী ঠাকুর"
     },
     {
-      videoId: "OjopH641Q3Q",
+      videoId: "4zyCkmAS1Oo",
       startTime: 0,
-      title: "আসছে মা দুর্গা সে (Ashey Maa Durga Shey)",
-      artist: "মিমি, শুভশ্রী & নুসরত • ক্যাপ্টেন স্টিল শারদীয়",
-      era: "বর্তমান যুগ • রাজবাড়ি ফিচার"
+      title: "আইলো উমা বাড়িতে (Ailo Uma Barite)",
+      artist: "মনামী ঘোষ • শারদীয় হিট সং",
+      era: "বর্তমান যুগ • ড্যান্স স্পেশাল"
+    },
+    {
+      videoId: "XyatKcoBrPw",
+      startTime: 0,
+      title: "বলো দুগ্গা এলো (Bolo Dugga Elo - Taakdoom)",
+      artist: "সুনিধি চৌহান & কৌশিক-গুড্ডু • ইন্দ্রনীল • SVF",
+      era: "বর্তমান যুগ • শারদ ধামাকা"
     },
     {
       videoId: "id5_3dKvEBg",
@@ -272,11 +279,25 @@
       era: "বর্তমান যুগ • ঢাক ও কাঁসর স্পেশাল"
     },
     {
-      videoId: "yzEbF55ywtM",
+      videoId: "sPuZ0Q3KDWo",
       startTime: 0,
-      title: "বাজলো তোমার আলোর বেণু (Bajlo Tomar Alor Benu)",
-      artist: "দেবলীনা চ্যাটার্জি • SM Studio Mahalaya",
-      era: "বর্তমান যুগ • মহালয়া আগমনী"
+      title: "দুগ্গা মা (Dugga Ma - Bolo Dugga Maiki)",
+      artist: "অরিজিৎ সিং • অঙ্কুশ ও নুসরত • SVF Music",
+      era: "বর্তমান যুগ • অরিজিৎ সিং হিট"
+    },
+    {
+      videoId: "E2zfQEo7Q_M",
+      startTime: 0,
+      title: "এবার যেন অন্য রকম পুজো (Ebar Jeno Onno Rokom Pujo)",
+      artist: "দেব & মিমি চক্রবর্তী • রাজ চক্রবর্তী • SVF",
+      era: "বর্তমান যুগ • বিশেষ পূজা সং"
+    },
+    {
+      videoId: "3E_qefwPA0E",
+      startTime: 0,
+      title: "জয় জয় দুর্গা মা (Joy Joy Durga Maa - The Pujo Song)",
+      artist: "সৌরভ গাঙ্গুলী, জিৎ গাঙ্গুলী, মিমি & নুসরত",
+      era: "বর্তমান যুগ • মহারাজা স্পেশাল"
     },
     {
       videoId: "2U416kTo0as",
@@ -286,18 +307,11 @@
       era: "বর্তমান যুগ • দেব ও শুভশ্রী হিট"
     },
     {
-      videoId: "sPuZ0Q3KDWo",
+      videoId: "hnkfDCbULxk",
       startTime: 0,
-      title: "দুগ্গা মা (Dugga Ma - Bolo Dugga Maiki)",
-      artist: "অরিজিৎ সিং • অঙ্কুশ ও নুসরত • SVF Music",
-      era: "বর্তমান যুগ • অরিজিৎ সিং হিট"
-    },
-    {
-      videoId: "3E_qefwPA0E",
-      startTime: 0,
-      title: "জয় জয় দুর্গা মা (Joy Joy Durga Maa - The Pujo Song)",
-      artist: "সৌরভ গাঙ্গুলী, জিৎ গাঙ্গুলী, মিমি & নুসরত",
-      era: "বর্তমান যুগ • মহারাজা স্পেশাল"
+      title: "উমা আসে নতুন সাজে (Uma Ashe Notun Saje)",
+      artist: "অঙ্কিতা ভট্টাচার্য • Times Music Bangla",
+      era: "বর্তমান যুগ • নতুন প্রকাশ"
     },
     {
       videoId: "hbXuXt7gkFY",
