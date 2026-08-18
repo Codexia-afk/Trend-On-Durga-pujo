@@ -249,6 +249,92 @@
 
   // TAB 3: "বর্তমান যুগ" (Present Era - Fully Segregated Tracklist with Titles & Artists)
   const playlistPresentEra = [
+    // --- Zee Music Bangla Durga Puja Special Jukebox (q-G7GlrGRKU) ---
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 0,
+      title: "দুগ্গা এলো (Dugga Elo - Title Track)",
+      artist: "মোনালী ঠাকুর & কৌশিক-গুড্ডু • Zee Music Bangla",
+      era: "বর্তমান যুগ • জাদুকরী হিট"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 144,
+      title: "এবার পুজোয় (Ebar Pujoy)",
+      artist: "শারদীয় শিল্পী সমাহার • Zee Music Bangla",
+      era: "বর্তমান যুগ • উৎসব মেলোডি"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 442,
+      title: "মনসা ভাসান — লখাই (Monasha Bhasan)",
+      artist: "ঐতিহ্যবাহী লোকসুর কালেকশন",
+      era: "বর্তমান যুগ • লোকসংগীত"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 506,
+      title: "মা দুগ্গা এলো (Ma Dugga Elo)",
+      artist: "অরিজিৎ সিং & মেলোডি আর্টিস্টস",
+      era: "বর্তমান যুগ • আগমনী গান"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 717,
+      title: "বিসর্জন (Bishorjon)",
+      artist: "শারদীয়া গীতি কালেকশন • Zee Music",
+      era: "বর্তমান যুগ • বিজয়া সুর"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 855,
+      title: "দশভুজা মা এলো (Doshobhuja Maa Elo)",
+      artist: "দেবীবন্ধনা কালেকশন • Zee Music Bangla",
+      era: "বর্তমান যুগ • শারদীয় পপ"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 1028,
+      title: "ও দুর্গা মা (O Durga Ma)",
+      artist: "শারদীয় পপ আর্টিস্টস • Zee Music Bangla",
+      era: "বর্তমান যুগ • পূজার সুর"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 1274,
+      title: "পুজো পুজো গন্ধ এসেছে (Pujo Pujo Gondho Esecha)",
+      artist: "শারদীয় মেলোডি ভয়েসেস",
+      era: "বর্তমান যুগ • পুজো অ্যানথেম"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 1480,
+      title: "দুর্গাতিনাশিনী মা (Durgatinashini Maa)",
+      artist: "দেবী স্তুতিবৃন্দ • Zee Music Bangla",
+      era: "বর্তমান যুগ • ভক্তি ও সুর"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 1680,
+      title: "দশভুজা মা (Doshobhuja Ma Special)",
+      artist: "শারদ স্পেশাল মেলোডি",
+      era: "বর্তমান যুগ • শারদীয় ভয়েস"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 1942,
+      title: "বলো দুগ্গা মায়ের জয় (Bolo Dugga Mayer Joy)",
+      artist: "উৎসব ব্যান্ড কালেক্টিভ • Zee Music",
+      era: "বর্তমান যুগ • ধামাকা নৃত্য"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 2253,
+      title: "সরস্বতী বন্দনা (Saraswati Bandana)",
+      artist: "শাস্ত্রীয় স্তোত্রবৃন্দ • Zee Music Bangla",
+      era: "বর্তমান যুগ • বন্দনা সুর"
+    },
+
     // --- SVF Best of Durga Puja Hits Jukebox (0RUhpbHwM90) ---
     {
       videoId: "0RUhpbHwM90",
