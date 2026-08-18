@@ -381,6 +381,7 @@
     { id: 'bg-theme-shasthi', bnName: 'ষষ্ঠীর সকাল', enName: 'Sosthi r Sokal' },
     { id: 'bg-theme-mahalaya', bnName: 'মহালয়ার সকালের তর্পণ', enName: 'Mahalaya r Sokal er Torpon' },
     { id: 'bg-theme-saptami', bnName: 'সপ্তমীর রাতে মণ্ডপ পরিক্রমা', enName: 'Saptomir Raat Mondop Ghora' },
+    { id: 'bg-theme-ashtami', bnName: 'অষ্টমীর পুষ্পাঞ্জলি ও ভোরের আরতি', enName: 'Ashtamir Pushpanjali' },
     { id: 'bg-theme-evening', bnName: 'সন্ধ্যা আরতি', enName: 'Evening Aarti' },
     { id: 'bg-theme-dawn', bnName: 'ভোরের মহাষ্টমী', enName: 'Maha Ashtami Dawn' },
     { id: 'bg-theme-rainy', bnName: 'বৃষ্টির সন্ধিপূজা', enName: 'Rainy Sandhi Puja' },
