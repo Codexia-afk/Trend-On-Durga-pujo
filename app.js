@@ -586,8 +586,8 @@
   window.onYouTubeIframeAPIReady = function () {
     const initialTrack = getActivePlaylist()[0];
     ytPlayer = new YT.Player('yt-player', {
-      height: '1',
-      width: '1',
+      height: '200',
+      width: '200',
       videoId: initialTrack.videoId,
       playerVars: {
         'playsinline': 1,
@@ -595,6 +595,7 @@
         'disablekb': 1,
         'fs': 0,
         'rel': 0,
+        'autoplay': 0,
         'start': initialTrack.startTime || 0
       },
       events: {
@@ -605,8 +606,8 @@
     });
 
     dhakYtPlayer = new YT.Player('dhak-yt-player', {
-      height: '1',
-      width: '1',
+      height: '200',
+      width: '200',
       videoId: 'ZpUOgCsPgy0',
       playerVars: {
         'playsinline': 1,
@@ -753,7 +754,7 @@
 
     updateTrackDisplay(index);
 
-    if (ytPlayer && state.isPlayerReady) {
+    if (ytPlayer && typeof ytPlayer.loadVideoById === 'function') {
       try {
         ytPlayer.loadVideoById({
           videoId: track.videoId,
@@ -891,17 +892,23 @@
 
   // Transport Controls
   function togglePlayPause() {
-    if (!ytPlayer || !state.isPlayerReady) return;
+    if (!ytPlayer) return;
     if (state.isPlaying) {
       state.userPaused = true;
       state.isPlaying = false;
-      ytPlayer.pauseVideo();
+      if (typeof ytPlayer.pauseVideo === 'function') {
+        ytPlayer.pauseVideo();
+      }
       DOM.btnPlayPause.textContent = '▶';
       DOM.playerDock.classList.remove('playing');
     } else {
       state.userPaused = false;
       state.isPlaying = true;
-      ytPlayer.playVideo();
+      if (typeof ytPlayer.playVideo === 'function') {
+        ytPlayer.playVideo();
+      } else {
+        loadTrackAndPlay(state.currentTrackIndex);
+      }
       DOM.btnPlayPause.textContent = '⏸';
       DOM.playerDock.classList.add('playing');
     }
