@@ -1167,7 +1167,40 @@
       if (DOM.dhakBtnText) DOM.dhakBtnText.textContent = state.currentLang === 'bn' ? 'ঢাক বাজছে...' : 'Dhak Playing...';
 
       if (dhakYtPlayer && typeof dhakYtPlayer.playVideo === 'function') {
-        dhakYtPlayer.playVideo();
+        try {
+          dhakYtPlayer.unMute();
+          dhakYtPlayer.setVolume(100);
+          dhakYtPlayer.playVideo();
+        } catch (e) {
+          startDhakLoop();
+        }
+      } else if (window.YT && window.YT.Player) {
+        try {
+          dhakYtPlayer = new YT.Player('dhak-yt-player', {
+            height: '200',
+            width: '200',
+            videoId: 'ZpUOgCsPgy0',
+            playerVars: {
+              'playsinline': 1,
+              'controls': 0,
+              'disablekb': 1,
+              'fs': 0,
+              'rel': 0,
+              'autoplay': 1
+            },
+            events: {
+              'onReady': (event) => {
+                try {
+                  event.target.unMute();
+                  event.target.setVolume(100);
+                  event.target.playVideo();
+                } catch (err) {}
+              }
+            }
+          });
+        } catch (e) {
+          startDhakLoop();
+        }
       } else {
         startDhakLoop();
       }
@@ -1185,7 +1218,7 @@
       if (DOM.dhakBtnText) DOM.dhakBtnText.textContent = state.currentLang === 'bn' ? 'ঢাকের আওয়াজ' : 'Dhak Sound';
 
       if (dhakYtPlayer && typeof dhakYtPlayer.pauseVideo === 'function') {
-        dhakYtPlayer.pauseVideo();
+        try { dhakYtPlayer.pauseVideo(); } catch (e) {}
       }
       stopDhakLoop();
     }
