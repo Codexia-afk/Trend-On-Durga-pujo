@@ -556,10 +556,16 @@
     tabBtns: document.querySelectorAll('.tab-btn')
   };
 
-  // Nostalgic Puja Thoughts Rotation Array (26 Curated Nostalgic Memories)
+  // Nostalgic Puja Thoughts Rotation Array (32 Curated Nostalgic Memories)
   const pujaThoughts = {
     bn: [
       "মহালয়ার কাকভোর থেকে বিজয়ার সিঁদুর খেলা — রেডিওর সুর, ক্যাসেটের নস্টালজিয়া আর অমলিন পূজার আড্ডা।",
+      "মণ্ডপ পরিক্রমায় ভিড়ের মাঝে হঠাৎ চোখাচোখি, চেনা চোখে অজান্তে ফুটে ওঠা লাজুক হাসি — পূজোর প্রথম প্রেম।",
+      "বাতাসে কাশের দোলা, শিউলি ঝরা সবুজ ঘাস আর মাইকে বীরেন্দ্রকৃষ্ণের ভরাট গলা — 'মা আসছেন'।",
+      "বিজয়া দশমীর সিঁদুর খেলা, দেবীর চোখে বিদায়ের অশ্রু আর বিষাদের সুর — 'মা যাচ্ছেন'।",
+      "গঙ্গার ঘাটে বিসর্জনের আলো নেভার সাথে সাথেই বুকে জেগে ওঠে নীরব দীর্ঘশ্বাস — 'আবার ৩৬৫ দিনের অপেক্ষা'।",
+      "ঢাকের শেষ কাঠি, মিষ্টিমুখ আর বুকভরা ভালোবাসায় চারদিক কেঁপে ওঠে এক সুরে — 'আসছে বছর আবার হবে'!",
+      "ক্যাসেটের ফিতেয় আটকে থাকা পুরনো গানের সুর আর নতুন জামার গন্ধ — দুর্গোৎসব মানেই বাঙালির প্রাণের আবেগ।",
       "আকাশজুড়ে পেঁজা তুলোর মেঘ, শিউলি ফুলের গন্ধ আর ঢাকের কাঠিতে জানান দেওয়া — আগমনীর আনন্দ।",
       "ষষ্ঠীর নতুন জামা, সপ্তমীর মণ্ডপ পরিক্রমা, আর অষ্টমীর অঞ্জলিতে দেবীর চরণে ভক্তির অর্ঘ্য।",
       "নব্বইয়ের শারদীয় ক্যাসেট, রেডিওর গান আর পাড়ার প্যান্ডেলে মাইকের সেই চেনা নস্টালজিক সুর।",
@@ -588,6 +594,12 @@
     ],
     en: [
       "From Mahalaya dawn to Dashami Sindoor Khela — an archive of nostalgic Bengali festival melodies.",
+      "A fleeting glance across a crowded pandal, a shy smile exchanged under glowing lights — the sweet magic of Pujo Prem.",
+      "Swaying Kash grass, dew-kissed Shiuli flowers, and the echo of Mahalaya on the radio — 'Maa Asche'.",
+      "Red Sindoor Khela on Bijoya Dashami, tears in every eye as Goddess Durga departs — 'Maa Jache'.",
+      "As the lamps fade at the Ganga Ghat on Visarjan night, the heart whispers — 'Waiting another 365 days'.",
+      "The final rhythm of the Dhak, warm hugs, and sweets shared with the joyful promise — 'Asche Bochor Abar Hobe'!",
+      "The fragrance of new festive clothes and golden cassette tunes — Durga Puja is the timeless soul of Bengal.",
       "Fluffy autumn clouds, the fragrance of Shiuli flowers, and the beat of the Dhak signaling Maa Durga's arrival.",
       "New festive attire on Sashthi, pandal hopping on Saptami, and sacred Anjali offerings on Ashtami.",
       "Golden cassettes of 90s Puja releases, radio broadcasts, and beloved melodies echoing through pandal speakers.",
