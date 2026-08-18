@@ -848,16 +848,45 @@
         });
         DOM.btnPlayPause.textContent = '⏸';
         DOM.playerDock.classList.add('playing');
-        showToast(`এখন বাজছে: ${track.title}`, '🎶');
 
         // Backup force-play to overcome browser iframe policies
         setTimeout(() => {
           if (ytPlayer && typeof ytPlayer.playVideo === 'function' && !state.userPaused) {
-            ytPlayer.playVideo();
+            try { ytPlayer.playVideo(); } catch (e) {}
           }
-        }, 200);
+        }, 150);
       } catch (err) {
         console.error("Error loading video track:", err);
+      }
+    } else if (window.YT && window.YT.Player) {
+      try {
+        ytPlayer = new YT.Player('yt-player', {
+          height: '200',
+          width: '200',
+          videoId: track.videoId,
+          playerVars: {
+            'playsinline': 1,
+            'controls': 0,
+            'disablekb': 1,
+            'fs': 0,
+            'rel': 0,
+            'autoplay': 1,
+            'start': track.startTime || 0
+          },
+          events: {
+            'onReady': (event) => {
+              state.isPlayerReady = true;
+              startSeekPolling();
+              try { event.target.playVideo(); } catch (e) {}
+            },
+            'onStateChange': onPlayerStateChange,
+            'onError': onPlayerError
+          }
+        });
+        DOM.btnPlayPause.textContent = '⏸';
+        DOM.playerDock.classList.add('playing');
+      } catch (e) {
+        console.warn("Fallback YT player init error:", e);
       }
     }
   }
@@ -978,23 +1007,24 @@
 
   // Transport Controls
   function togglePlayPause() {
-    if (!ytPlayer) return;
     if (state.isPlaying) {
       state.userPaused = true;
       state.isPlaying = false;
-      if (typeof ytPlayer.pauseVideo === 'function') {
-        ytPlayer.pauseVideo();
+      if (ytPlayer && typeof ytPlayer.pauseVideo === 'function') {
+        try { ytPlayer.pauseVideo(); } catch (e) {}
       }
       DOM.btnPlayPause.textContent = '▶';
       DOM.playerDock.classList.remove('playing');
     } else {
       state.userPaused = false;
       state.isPlaying = true;
-      if (typeof ytPlayer.playVideo === 'function') {
-        ytPlayer.playVideo();
+
+      if (ytPlayer && typeof ytPlayer.playVideo === 'function' && typeof ytPlayer.getPlayerState === 'function' && ytPlayer.getPlayerState() === 2) {
+        try { ytPlayer.playVideo(); } catch (e) { loadTrackAndPlay(state.currentTrackIndex); }
       } else {
         loadTrackAndPlay(state.currentTrackIndex);
       }
+
       DOM.btnPlayPause.textContent = '⏸';
       DOM.playerDock.classList.add('playing');
     }
