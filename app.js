@@ -644,9 +644,9 @@
         currentThoughtIndex = (currentThoughtIndex + 1) % thoughtsList.length;
         DOM.mainSubtext.textContent = thoughtsList[currentThoughtIndex];
         DOM.mainSubtext.classList.remove('text-fade');
-      }, 450);
+      }, 800);
 
-    }, 6000);
+    }, 30000);
   }
 
   // YouTube Player Global Reference
