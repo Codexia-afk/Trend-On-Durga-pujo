@@ -247,167 +247,128 @@
     }
   ];
 
-  // TAB 3: "বর্তমান যুগ" (Present Era - Fully Segregated Tracklist with Titles & Artists)
+  // TAB 3: "বর্তমান যুগ" (Present Era - Single Track Official Videos & Special Albums)
   const playlistPresentEra = [
-    // --- Zee Music Bangla Durga Puja Special Jukebox (q-G7GlrGRKU) ---
+    // --- Official Single Tracks from YouTube Playlist (PLEWEj5NdvUqJeYfSDC4jJQXGgw92vNb6k) ---
     {
-      videoId: "q-G7GlrGRKU",
+      videoId: "E2zfQEo7Q_M",
       startTime: 0,
-      title: "দুগ্গা এলো (Dugga Elo - Title Track)",
-      artist: "মোনালী ঠাকুর & কৌশিক-গুড্ডু • Zee Music Bangla",
-      era: "বর্তমান যুগ • জাদুকরী হিট"
+      title: "এবার যেন অন্য রকম পুজো (Ebar Jeno Onno Rokom Pujo)",
+      artist: "দেব & মিমি চক্রবর্তী • রাজ চক্রবর্তী • SVF",
+      era: "বর্তমান যুগ • বিশেষ পূজা সং"
     },
     {
-      videoId: "q-G7GlrGRKU",
-      startTime: 144,
-      title: "এবার পুজোয় (Ebar Pujoy)",
-      artist: "শারদীয় শিল্পী সমাহার • Zee Music Bangla",
-      era: "বর্তমান যুগ • উৎসব মেলোডি"
-    },
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 442,
-      title: "মনসা ভাসান — লখাই (Monasha Bhasan)",
-      artist: "ঐতিহ্যবাহী লোকসুর কালেকশন",
-      era: "বর্তমান যুগ • লোকসংগীত"
-    },
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 506,
-      title: "মা দুগ্গা এলো (Ma Dugga Elo)",
-      artist: "অরিজিৎ সিং & মেলোডি আর্টিস্টস",
-      era: "বর্তমান যুগ • আগমনী গান"
-    },
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 717,
-      title: "বিসর্জন (Bishorjon)",
-      artist: "শারদীয়া গীতি কালেকশন • Zee Music",
-      era: "বর্তমান যুগ • বিজয়া সুর"
-    },
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 855,
-      title: "দশভুজা মা এলো (Doshobhuja Maa Elo)",
-      artist: "দেবীবন্ধনা কালেকশন • Zee Music Bangla",
-      era: "বর্তমান যুগ • শারদীয় পপ"
-    },
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 1028,
-      title: "ও দুর্গা মা (O Durga Ma)",
-      artist: "শারদীয় পপ আর্টিস্টস • Zee Music Bangla",
-      era: "বর্তমান যুগ • পূজার সুর"
-    },
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 1274,
-      title: "পুজো পুজো গন্ধ এসেছে (Pujo Pujo Gondho Esecha)",
-      artist: "শারদীয় মেলোডি ভয়েসেস",
-      era: "বর্তমান যুগ • পুজো অ্যানথেম"
-    },
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 1480,
-      title: "দুর্গাতিনাশিনী মা (Durgatinashini Maa)",
-      artist: "দেবী স্তুতিবৃন্দ • Zee Music Bangla",
-      era: "বর্তমান যুগ • ভক্তি ও সুর"
-    },
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 1680,
-      title: "দশভুজা মা (Doshobhuja Ma Special)",
-      artist: "শারদ স্পেশাল মেলোডি",
-      era: "বর্তমান যুগ • শারদীয় ভয়েস"
-    },
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 1942,
-      title: "বলো দুগ্গা মায়ের জয় (Bolo Dugga Mayer Joy)",
-      artist: "উৎসব ব্যান্ড কালেক্টিভ • Zee Music",
-      era: "বর্তমান যুগ • ধামাকা নৃত্য"
-    },
-    {
-      videoId: "q-G7GlrGRKU",
-      startTime: 2253,
-      title: "সরস্বতী বন্দনা (Saraswati Bandana)",
-      artist: "শাস্ত্রীয় স্তোত্রবৃন্দ • Zee Music Bangla",
-      era: "বর্তমান যুগ • বন্দনা সুর"
-    },
-
-    // --- SVF Best of Durga Puja Hits Jukebox (0RUhpbHwM90) ---
-    {
-      videoId: "0RUhpbHwM90",
+      videoId: "OjopH641Q3Q",
       startTime: 0,
-      title: "পূজার গান (Pujar Gaan - Special Title Track)",
-      artist: "কৌশিক-গুড্ডু & SVF All Stars",
-      era: "বর্তমান যুগ • শারদ অ্যানথেম"
+      title: "আসছে মা দুর্গা সে (Ashey Maa Durga Shey)",
+      artist: "মিমি, শুভশ্রী & নুসরত • ক্যাপ্টেন স্টিল শারদীয়",
+      era: "বর্তমান যুগ • রাজবাড়ি ফিচার"
     },
     {
-      videoId: "0RUhpbHwM90",
-      startTime: 390,
+      videoId: "id5_3dKvEBg",
+      startTime: 0,
+      title: "ঢাক বাজো কাঁসর বাজো (Dhak Baja Kashor Baja)",
+      artist: "শ্রেয়া ঘোষাল & জিৎ গাঙ্গুলী • T-Series Bangla",
+      era: "বর্তমান যুগ • ঢাক ও কাঁসর স্পেশাল"
+    },
+    {
+      videoId: "yzEbF55ywtM",
+      startTime: 0,
+      title: "বাজলো তোমার আলোর বেণু (Bajlo Tomar Alor Benu)",
+      artist: "দেবলীনা চ্যাটার্জি • SM Studio Mahalaya",
+      era: "বর্তমান যুগ • মহালয়া আগমনী"
+    },
+    {
+      videoId: "2U416kTo0as",
+      startTime: 0,
+      title: "এলো যে মা (Elo Je Maa)",
+      artist: "অভিজিৎ ভট্টাচার্য & শ্রেয়া ঘোষাল • চ্যালেঞ্জ ২ (SVF)",
+      era: "বর্তমান যুগ • দেব ও শুভশ্রী হিট"
+    },
+    {
+      videoId: "sPuZ0Q3KDWo",
+      startTime: 0,
       title: "দুগ্গা মা (Dugga Ma - Bolo Dugga Maiki)",
-      artist: "অরিজিৎ সিং • SVF Hits",
-      era: "বর্তমান যুগ • অরিজিৎ সিং"
+      artist: "অরিজিৎ সিং • অঙ্কুশ ও নুসরত • SVF Music",
+      era: "বর্তমান যুগ • অরিজিৎ সিং হিট"
     },
     {
-      videoId: "0RUhpbHwM90",
-      startTime: 547,
-      title: "এলো যে মা (Elo Je Ma)",
-      artist: "অনুপম রায় & দল • বিশেষ পুজো গান",
-      era: "বর্তমান যুগ • মেলোডি পপ"
+      videoId: "3E_qefwPA0E",
+      startTime: 0,
+      title: "জয় জয় দুর্গা মা (Joy Joy Durga Maa - The Pujo Song)",
+      artist: "সৌরভ গাঙ্গুলী, জিৎ গাঙ্গুলী, মিমি & নুসরত",
+      era: "বর্তমান যুগ • মহারাজা স্পেশাল"
     },
     {
-      videoId: "0RUhpbHwM90",
-      startTime: 824,
-      title: "জাগো উমা (Jago Uma - Agomoni Special)",
-      artist: "অরিজিৎ সিং & শ্রেয়া ঘোষাল",
-      era: "বর্তমান যুগ • আগমনী সুর"
+      videoId: "hbXuXt7gkFY",
+      startTime: 0,
+      title: "ঢাকের তালে কোমর দোলে (Dhaker Taley - Poran Jai Jolia Re)",
+      artist: "অভিজিৎ ভট্টাচার্য • দেব & শুভশ্রী • SVF",
+      era: "বর্তমান যুগ • ঢাক ড্যান্স অ্যানথেম"
     },
     {
-      videoId: "0RUhpbHwM90",
-      startTime: 986,
-      title: "আগমনীর গান (Agomonir Gaan)",
-      artist: "ঐতিহ্যবাহী দেবীবন্ধনা কালেকশন",
-      era: "বর্তমান যুগ • চণ্ডী স্তোত্র"
+      videoId: "1OQ0cyM3QKw",
+      startTime: 0,
+      title: "সুরুচি সংঘ থিম সং (Suruchi Sangha Theme Song)",
+      artist: "ইন্দ্রনীল সেন & লোপামুদ্রা মিত্র • মমতা বন্দ্যোপাধ্যায়",
+      era: "বর্তমান যুগ • সেরা মণ্ডপ থিম"
     },
     {
-      videoId: "0RUhpbHwM90",
-      startTime: 1328,
-      title: "বলো দুগ্গা এলো (Bolo Dugga Elo)",
-      artist: "সুনিধি চৌহান & কৌশিক-গুড্ডু",
+      videoId: "60tSbJWJCr0",
+      startTime: 0,
+      title: "মা গো তুই (Maa Go Tui - Durgeshgorer Guptodhon)",
+      artist: "মনোময় ভট্টাচার্য & সোমচন্দা • বিক্রম ঘোষ • SVF",
+      era: "বর্তমান যুগ • মেলোডি অরিজিনাল"
+    },
+    {
+      videoId: "80OX5xMvJP4",
+      startTime: 0,
+      title: "দুগ্গা মাইকী জয় (Dugga Maiki Joy)",
+      artist: "শ্রী প্রীতম & জলি দাস • অঙ্কুশ ও নুসরত • Eskay",
+      era: "বর্তমান যুগ • ব্লকবাস্টার বিট"
+    },
+    {
+      videoId: "tXXwsHeS_T0",
+      startTime: 0,
+      title: "রূপং দেহি জয়ং দেহি (Rupang Dehi Jayang Dehi)",
+      artist: "পণ্ডিত তুষার দত্ত • দুর্গা অর্গলা স্তোত্রম",
+      era: "বর্তমান যুগ • শাস্ত্রীয় স্তোত্র"
+    },
+    {
+      videoId: "_ADd39C-88w",
+      startTime: 0,
+      title: "মধুমাধুরী (Madhumaduri Durga Puja Special)",
+      artist: "শ্রেয়া ঘোষাল • শারদীয় একক সুর",
+      era: "বর্তমান যুগ • মেলোডি কুইন"
+    },
+    {
+      videoId: "ZQlzj4wehCc",
+      startTime: 0,
+      title: "অয়ি গিরিনন্দিনি নন্দিতমেদিনি (Ai Giri Nandini Stotram)",
+      artist: "নিরুপম বন্দ্যোপাধ্যায় • মহিষাসুরমর্দিনী স্তোত্র",
+      era: "বর্তমান যুগ • শক্তি স্তোত্রম"
+    },
+    {
+      videoId: "ayZUGy7816g",
+      startTime: 0,
+      title: "দুগ্গি এলো ঘরে (Duggi Elo Ghore)",
+      artist: "রাজকুমার রায় • টাইমস মিউজিক বাংলা",
+      era: "বর্তমান যুগ • ফোক ড্যান্স"
+    },
+    {
+      videoId: "9OkzYV4R9nc",
+      startTime: 0,
+      title: "দুর্গা মা (Durga Maa Pujo Special)",
+      artist: "আকাশ সেন & হৈমন্তী রক্ষেত • Eskay Movies",
       era: "বর্তমান যুগ • পূজা উৎসব"
     },
     {
-      videoId: "0RUhpbHwM90",
-      startTime: 1524,
-      title: "এবার যেন অন্যরকম পুজো (Ebar Jeno Onyorokom Pujo)",
-      artist: "রূপম ইসলাম & বাংলা ব্যান্ড স্পেশাল",
-      era: "বর্তমান যুগ • রক অ্যানথেম"
+      videoId: "MsqpjM09MrY",
+      startTime: 0,
+      title: "আগমনীর গান (Agomonir Gaan)",
+      artist: "অনুপম রায় • Oriplast Originals (SVF Music)",
+      era: "বর্তমান যুগ • অনুপম রায় স্পেশাল"
     },
-    {
-      videoId: "0RUhpbHwM90",
-      startTime: 1734,
-      title: "ঢাকের তালে কোমর দোলে (Dhaker Taale)",
-      artist: "অভিজিৎ ভট্টাচার্য & পরিনীতা • পরাণ যায় জ্বলিয়া রে",
-      era: "বর্তমান যুগ • শারদীয় ড্যান্স"
-    },
-    {
-      videoId: "0RUhpbHwM90",
-      startTime: 2010,
-      title: "এলো রে পুজো এলো (Elo Re Pujo Elo)",
-      artist: "নকাশ আজিজ & সেঁজুতি দাস",
-      era: "বর্তমান যুগ • উৎসব ধামাকা"
-    },
-    {
-      videoId: "0RUhpbHwM90",
-      startTime: 3181,
-      title: "লাগে উরা ধুরা (Lage Ura Dhura)",
-      artist: "প্রীতম & তৌফিস কালেক্টিভ",
-      era: "বর্তমান যুগ • ব্লকবাস্টার হিট"
-    },
-
-    // --- Individual Official Single Videos ---
     {
       videoId: "hnkfDCbULxk",
       startTime: 0,
@@ -415,33 +376,91 @@
       artist: "অঙ্কিতা ভট্টাচার্য • Zee Bangla Special",
       era: "বর্তমান যুগ • নতুন প্রকাশ"
     },
+
+    // --- Zee Music Durga Puja Special Tracks (q-G7GlrGRKU) ---
     {
-      videoId: "sPuZ0Q3KDWo",
+      videoId: "q-G7GlrGRKU",
       startTime: 0,
-      title: "দুগ্গা মা (Dugga Ma Official Video)",
-      artist: "অরিজিৎ সিং • Bolo Dugga Maiki Movie",
-      era: "বর্তমান যুগ • ভিডিও পপ"
-    },
-    {
-      videoId: "xlElO06nQy8",
-      startTime: 0,
-      title: "দুর্গা এলো (Dugga Elo Official Video)",
+      title: "দুগ্গা এলো (Dugga Elo - Zee Special)",
       artist: "মোনালী ঠাকুর • Zee Music Bangla",
-      era: "বর্তমান যুগ • একক হিট"
+      era: "বর্তমান যুগ • মোনালী ঠাকুর"
     },
     {
-      videoId: "gS6S7G8a5lE",
-      startTime: 0,
-      title: "বলো দুর্গা এলো রে (Bolo Dugga Elo Video)",
-      artist: "সুনিধি চৌহান & কৌশিক-গুড্ডু • SVF Music",
-      era: "বর্তমান যুগ • হাইলাইটস"
+      videoId: "q-G7GlrGRKU",
+      startTime: 144,
+      title: "এবার পুজোয় (Ebar Pujoy)",
+      artist: "শারদীয় অ্যালবাম ট্রেজার • Zee Music",
+      era: "বর্তমান যুগ • অ্যালবামি পপ"
     },
     {
-      videoId: "id5_3dKvEBg",
-      startTime: 0,
-      title: "ঢাক বাজো কাশের বনে (Dhak Baja Kash Bhorja)",
-      artist: "বনি সেনগুপ্ত & রূপম ইসলাম • SVF Special",
-      era: "বর্তমান যুগ • ঢাক বিট"
+      videoId: "q-G7GlrGRKU",
+      startTime: 442,
+      title: "মনসা ভাসান — লখাই (Monasha Bhasan)",
+      artist: "ঐতিহ্যবাহী শারদ ফোক সং কালেকশন",
+      era: "বর্তমান যুগ • ফোক টিউন"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 506,
+      title: "মা দুগ্গা এলো (Ma Dugga Elo)",
+      artist: "অরিজিৎ সিং • Zee Music Special",
+      era: "বর্তমান যুগ • অরিজিৎ সিং"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 717,
+      title: "বিসর্জন (Bishorjon Melodies)",
+      artist: "বিসর্জনের সুরে বিষাদ ও আনন্দ",
+      era: "বর্তমান যুগ • বিষাদ টিউন"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 855,
+      title: "দশভুজা মা এলো (Doshobhuja Maa Elo)",
+      artist: "শারদীয় আগমনী সংগীতি",
+      era: "বর্তমান যুগ • শক্তি রূপ"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 1028,
+      title: "ও দুর্গা মা (O Durga Ma)",
+      artist: "পুজোর জমজমাট ড্যান্স নম্বর",
+      era: "বর্তমান যুগ • উৎসব গান"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 1274,
+      title: "পুজো পুজো গন্ধ এসেছে (Pujo Pujo Gondho Esecha)",
+      artist: "শারদ বাতাসের মেঠো গান",
+      era: "বর্তমান যুগ • আগমনী গন্ধ"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 1480,
+      title: "দুর্গাতিনাশিনী মা (Durgatinashini Maa)",
+      artist: "শ্রী চণ্ডী স্তোত্র বন্দনা",
+      era: "বর্তমান যুগ • দেবীর বন্দনা"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 1680,
+      title: "দশভুজা মা (Doshobhuja Ma Special)",
+      artist: "উৎসবের বিশেষ মেলোডি ট্র্যাক",
+      era: "বর্তমান যুগ • বিশেষ ভক্তি"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 1942,
+      title: "বলো দুগ্গা মায়ের জয় (Bolo Dugga Mayer Joy)",
+      artist: "কোরাস দল & ঢাকের তালের ধামাকা",
+      era: "বর্তমান যুগ • জয়ধ্বনি"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 2253,
+      title: "সরস্বতী বন্দনা (Saraswati Bandana)",
+      artist: "শারদীয় সমাপ্তি সুরঞ্জলি",
+      era: "বর্তমান যুগ • পবিত্র বন্দনা"
     }
   ];
 
