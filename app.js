@@ -437,6 +437,8 @@
     festiveMagicBtn: document.getElementById('festive-magic-btn'),
     magicContainer: document.getElementById('magic-animation-container'),
     kaashFieldContainer: document.getElementById('kaash-field-container'),
+    kaashLeftBush: document.getElementById('kaash-left-bush'),
+    kaashRightBush: document.getElementById('kaash-right-bush'),
     magicBtnText: document.getElementById('magic-btn-text'),
     shareCountBadge: document.getElementById('share-count-badge'),
     shareProgressBar: document.getElementById('share-progress-bar'),
@@ -1130,8 +1132,39 @@
     } catch (e) {}
   }
 
-  // 30-Second Shiuli Flower Rain Animation Engine
+  // 30-Second Shiuli Flower Rain & Kaash Phool Corner Bushes Animation Engine
   const SHIULI_SVG = `<svg width="24" height="24" viewBox="0 0 24 24"><g transform="translate(12,12)"><circle r="2.8" fill="#FF6B00"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(72)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(144)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(216)"/><path d="M0,-3 Q-2.5,-8 0,-11 Q2.5,-8 0,-3" fill="#FFFFFF" transform="rotate(288)"/></g></svg>`;
+
+  const KAASH_STALK_SVG = `<svg width="75" height="340" viewBox="0 0 75 340">
+    <defs>
+      <linearGradient id="stemGrad" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0%" stop-color="#4B5E1E"/>
+        <stop offset="60%" stop-color="#7B9330"/>
+        <stop offset="100%" stop-color="#C2A45C"/>
+      </linearGradient>
+      <linearGradient id="plumeGrad1" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0%" stop-color="#E2CFAC"/>
+        <stop offset="40%" stop-color="#F5EADA"/>
+        <stop offset="100%" stop-color="#FFFFFF"/>
+      </linearGradient>
+      <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.35"/>
+      </filter>
+    </defs>
+    <path d="M37 340 C 20 270, -10 210, -2 150 C 4 185, 25 240, 37 340 Z" fill="#4B6319" opacity="0.9"/>
+    <path d="M37 340 C 54 265, 85 205, 77 145 C 70 180, 49 235, 37 340 Z" fill="#698324" opacity="0.9"/>
+    <path d="M37 340 C 10 280, -15 225, -8 180 C -2 205, 20 255, 37 340 Z" fill="#7D982F" opacity="0.8"/>
+    <path d="M37 340 C 65 275, 90 220, 82 170 C 76 195, 54 250, 37 340 Z" fill="#58731E" opacity="0.8"/>
+    <path d="M37 340 C 37 220, 41 110, 35 0" stroke="url(#stemGrad)" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g filter="url(#softGlow)">
+      <path d="M35 15 C 22 50, 18 120, 33 220 C 44 160, 48 80, 35 15 Z" fill="#D9C29A" opacity="0.6"/>
+      <path d="M35 0 Q10 25 5 45 Q25 38 35 25 Q8 55 2 80 Q24 70 35 52 Q6 90 2 118 Q22 105 35 85 Q8 132 4 160 Q24 145 35 125 Q12 178 8 208 Q26 188 35 165 Z" fill="url(#plumeGrad1)"/>
+      <path d="M35 0 Q60 22 66 42 Q45 36 35 25 Q62 50 68 76 Q46 68 35 52 Q64 85 70 112 Q48 102 35 85 Q62 126 66 155 Q46 140 35 125 Q58 172 62 202 Q44 182 35 165 Z" fill="url(#plumeGrad1)"/>
+      <path d="M35 5 Q18 30 14 50 Q28 42 35 30 Q14 62 10 88 Q28 76 35 60 Q12 100 8 128 Q28 112 35 95 Q14 142 12 170 Q28 152 35 135 Z" fill="#FFFFFF"/>
+      <path d="M35 5 Q52 28 56 48 Q42 42 35 30 Q56 58 60 84 Q42 76 35 60 Q58 96 62 124 Q42 112 35 95 Q56 138 58 165 Q42 152 35 135 Z" fill="#FFFFFF"/>
+      <path d="M35 0 L 32 18 L 38 12 L 28 35 L 42 28 L 24 58 L 45 48 L 22 88 L 48 76 L 20 122 L 46 108 L 22 155 L 42 142 L 25 185 Z" fill="#FAF6EE" opacity="0.9"/>
+    </g>
+  </svg>`;
 
   let magicSpawners = [];
   let magicCountdownTimer = null;
@@ -1147,6 +1180,14 @@
   function startFestiveMagicAnimation() {
     state.isMagicAnimating = true;
     if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.classList.add('active');
+
+    // Grow Kaash Grass Corner Bushes at Bottom Left & Bottom Right
+    try {
+      renderKaashField();
+      if (DOM.kaashFieldContainer) DOM.kaashFieldContainer.classList.add('active');
+    } catch (e) {
+      console.warn('Kaash field render warning:', e);
+    }
 
     let secondsLeft = 30;
     if (DOM.magicBtnText) DOM.magicBtnText.textContent = `উৎসব (${secondsLeft}s)`;
@@ -1172,6 +1213,8 @@
     if (DOM.festiveMagicBtn) DOM.festiveMagicBtn.classList.remove('active');
     if (DOM.magicBtnText) DOM.magicBtnText.textContent = 'উৎসবের আনন্দ';
 
+    if (DOM.kaashFieldContainer) DOM.kaashFieldContainer.classList.remove('active');
+
     if (magicCountdownTimer) {
       clearInterval(magicCountdownTimer);
       magicCountdownTimer = null;
@@ -1184,6 +1227,48 @@
       setTimeout(() => {
         if (!state.isMagicAnimating) DOM.magicContainer.innerHTML = '';
       }, 2500);
+    }
+  }
+
+  function renderKaashField() {
+    if (!DOM.kaashLeftBush || !DOM.kaashRightBush) return;
+    DOM.kaashLeftBush.innerHTML = '';
+    DOM.kaashRightBush.innerHTML = '';
+
+    const stalkCountPerCorner = 9;
+
+    // Render Left Corner Bush
+    for (let i = 0; i < stalkCountPerCorner; i++) {
+      const stalk = document.createElement('div');
+      stalk.className = 'kaash-stalk';
+      stalk.innerHTML = KAASH_STALK_SVG;
+
+      const scale = 0.8 + Math.random() * 0.45;
+      const duration = 2.4 + Math.random() * 2.5;
+      const delay = Math.random() * -3.0;
+
+      stalk.style.animationDuration = `${duration}s`;
+      stalk.style.animationDelay = `${delay}s`;
+      stalk.style.transform = `scale(${scale})`;
+
+      DOM.kaashLeftBush.appendChild(stalk);
+    }
+
+    // Render Right Corner Bush
+    for (let i = 0; i < stalkCountPerCorner; i++) {
+      const stalk = document.createElement('div');
+      stalk.className = 'kaash-stalk';
+      stalk.innerHTML = KAASH_STALK_SVG;
+
+      const scale = 0.8 + Math.random() * 0.45;
+      const duration = 2.4 + Math.random() * 2.5;
+      const delay = Math.random() * -3.0;
+
+      stalk.style.animationDuration = `${duration}s`;
+      stalk.style.animationDelay = `${delay}s`;
+      stalk.style.transform = `scale(${scale})`;
+
+      DOM.kaashRightBush.appendChild(stalk);
     }
   }
 
