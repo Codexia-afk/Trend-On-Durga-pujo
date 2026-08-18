@@ -139,21 +139,15 @@ body {
 }
 
 .nav-left-widget {
-  position: fixed;
-  top: 14px;
-  left: 24px;
-  z-index: 105;
   display: flex;
   align-items: center;
 }
 
 .countdown-pill {
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 184, 0, 0.4);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-  padding: 7px 18px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  padding: 8px 18px;
   gap: 8px;
   font-family: var(--font-sans);
   font-size: 0.88rem;
@@ -179,10 +173,6 @@ body {
 }
 
 .nav-actions {
-  position: fixed;
-  top: 14px;
-  right: 24px;
-  z-index: 105;
   display: flex;
   align-items: center;
   gap: 10px;
