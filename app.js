@@ -247,8 +247,38 @@
     }
   ];
 
-  // TAB 3: "বর্তমান যুগ" (Present Era - Individual Official YouTube Video Hits)
+  // TAB 3: "বর্তমান যুগ" (Present Era - Jukebox q-G7GlrGRKU & New Age Puja Songs)
   const playlistPresentEra = [
+    // --- New Age Puja Jukebox (q-G7GlrGRKU) ---
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 0,
+      title: "বর্তমান যুগ পূজার স্পেশাল জুখবক্স — ১ (New Age Jukebox Track 1)",
+      artist: "বর্তমান যুগের সেরা পূজা অ্যানথেম",
+      era: "বর্তমান যুগ • ধামাকা জুখবক্স"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 180,
+      title: "বর্তমান যুগ পূজার স্পেশাল জুখবক্স — ২ (New Age Jukebox Track 2)",
+      artist: "বাংলা উৎসব পপ কালেকশন",
+      era: "বর্তমান যুগ • শারদীয়া সুর"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 360,
+      title: "বর্তমান যুগ পূজার স্পেশাল জুখবক্স — ৩ (New Age Jukebox Track 3)",
+      artist: "ঢাক ও ড্যান্স উৎসব বিট",
+      era: "বর্তমান যুগ • ড্যান্স হিটস"
+    },
+    {
+      videoId: "q-G7GlrGRKU",
+      startTime: 540,
+      title: "বর্তমান যুগ পূজার স্পেশাল জুখবক্স — ৪ (New Age Jukebox Track 4)",
+      artist: "নিউ এজ পূজা সং কালেকশন",
+      era: "বর্তমান যুগ • উৎসব মেলোডি"
+    },
+    // --- Individual Official Video Hits ---
     {
       videoId: "hnkfDCbULxk",
       startTime: 0,
