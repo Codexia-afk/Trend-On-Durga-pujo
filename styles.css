@@ -1283,15 +1283,15 @@ input:checked + .slider:before {
   }
 }
 
-/* Kaash Phool Grass Field (Grows up from bottom & sways in the wind like leaves) */
+/* Kaash Phool Grass Field (Overlays player dock capsule & sways in wind) */
 #kaash-field-container {
   position: fixed;
-  bottom: -10px;
+  bottom: -15px;
   left: 0;
   width: 100vw;
-  height: 240px;
+  height: 320px;
   pointer-events: none;
-  z-index: 98;
+  z-index: 110;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
