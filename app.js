@@ -1090,6 +1090,17 @@
     showToast('১০ সেকেন্ড সামনে (10s Forward)', '↻');
   }
 
+  // HTML Sanitizer for secure dynamic rendering
+  function escapeHTML(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
   // Render Playlist Modal List
   function renderPlaylist() {
     DOM.playlistContainer.innerHTML = '';
@@ -1107,11 +1118,11 @@
         <div class="item-left">
           <span class="item-num">${idx + 1}.</span>
           <div class="item-details">
-            <h5>${track.title}</h5>
-            <p>${track.artist}</p>
+            <h5>${escapeHTML(track.title)}</h5>
+            <p>${escapeHTML(track.artist)}</p>
           </div>
         </div>
-        <span class="item-tag">${track.era}</span>
+        <span class="item-tag">${escapeHTML(track.era)}</span>
       `;
 
       item.addEventListener('click', () => {
